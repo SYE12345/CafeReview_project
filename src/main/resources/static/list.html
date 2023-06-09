@@ -1,32 +1,57 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>CAFE</title>
   <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style2.css">
+  <link rel="stylesheet" href="css/style3.css">
+  <div class="navbar">
+    <a href="#" id="logo">
+      <img src="images/Logo.jpg" width="149" height="50">
+    </a>
+    <ul id="menu">
+      <li><a href="#">shop</a></li>
+      <li><a href="#">cart</a></li>
+      <li><a href="#">login</a></li>
+    </ul>
+  </div>
 
+  <div class="detail-header">
+    <table>
+      <tl>
+        <td>
+          <img src="images/Franchise/Starbucks_Bupyung/스타벅스_부평역점_내부.jpg" width="400" height="400">
+        </td>
+        <td>
+          <img src="images/Franchise/Starbucks_Bupyung/스타벅스_부평역점_외부.jpg" width="400" height="400">
+        </td>
+        <td>
+          <img src="images/Franchise/Starbucks_Bupyung/스타벅스_부평역점_메뉴1.jpg" width="400" height="400">
+        </td>
+        <td>
+          <img src="images/Franchise/Starbucks_Bupyung/스타벅스_부평역점_메뉴2.jpg" width="400" height="400">
+        </td>
+        <td>
+          <img src="images/Franchise/Starbucks_Bupyung/스타벅스_부평역점_메뉴3.jpg" width="400" height="400">
+        </td>
+      </tl>
+    </table>
+  </div>
 </head>
 <body>
 <!-- 상단바 로그인 회원가입 기타 등등 시작-->
-<div class="navbar">
-  <a href="#" id="logo">
-    <img src="images/Logo.jpg" width="149" height="50">
-  </a>
-  <ul id="menu">
-    <li><a href="#">shop</a></li>
-    <li><a href="#">cart</a></li>
-    <li><a href="#">login</a></li>
-  </ul>
-</div>
+
 <!-- 끝 -->
+<div class="wrapper">
+<div style="margin:100px 200px 200px 0px;">
 <div class="product_view"><!--레이아웃 나누기-->
 <h2>스타벅스 부평역점</h2>
- <table>
-
+  <section>
+  <table>
    <colgroup><!-- 표의 열을묶는 그룹을 정의한다 <colgroup>은 모든 <thead>, <th>, <tbody>, <tfoot>, <tr> 요소 앞에 위치해야 하며, \
    <table> 안에 <caption> 요소가 존재하는 경우 <caption> 뒤에 와야 한다.-->
-     <col style="width:173px;">
+     <col style="width:140px;">
 
    </colgroup>
    <tbody>
@@ -63,6 +88,13 @@
      <th></th>
      <td>
        <span style="padding-right: 20px">블론드 카페 아메리카노</span>
+       <span style="padding-left: 20px">4500원</span>
+     </td>
+   </tr>
+   <tr>
+     <th></th>
+     <td>
+       <span style="padding-right: 20px">블론드 카페 라떼</span>
        <span style="padding-left: 20px">5000원</span>
      </td>
    </tr>
@@ -70,17 +102,42 @@
  </table>
   <div class="img">
     <img src="images/Franchise/Starbucks_Bupyung/스타벅스_부평역점_내부.jpg">
-    <ul>
-      <li class="on"><a href="#"><img src="images/img.jpg" alt=""></a></li>
-      <li><a href="#"><img src="images/img.jpg" alt=""></a></li>
-    </ul>
+<!--    <ul>-->
+<!--      <li class="on"><a href="#"><img src="images/img.jpg" alt=""></a></li>-->
+<!--      <li><a href="imgages/logo.jpg"><img src="images/img.jpg" alt=""></a></li>-->
+<!--    </ul>-->
   </div>
   <div class="btns">
-    <a href="#a" class="btn1">장바구니</a>
-    <a href="#a" class="btn2">구매하기</a>
+    <a href="#a" class="btn1">리뷰쓰기</a>
+    <a href="#a" class="btn2">예약하기?</a>
   </div>
+  </section>
 </div>
-
-
+</div>
+  <div>
+  <aside>
+    <img src="images/Personal/dozenmatter/더즌매터map.jpg" width="430" heaight="220">
+    <img src="images/Personal/dozenmatter/더즌매터1.jpg" width="430" height="220">
+    <img src="images/Personal/dozenmatter/더즌매터2.jpg" width="430" height="220">
+    <img src="images/Personal/dozenmatter/더즌매터2.jpg" width="430" height="220">
+  </aside>
+  </div>
+<div class="footer">
+  <footer style="background-color: #DCDCDC">
+    <p>인천시 부평구 더 조은(주)카페 플레이스</p>
+    <p>사업자등록번호 : 215-86-93600·통신판매업신고 : 2009-서울송파-0069호·부가통신사업신고필증 : 021129</p>
+    <p>webmaster@iloom.com·Copyright (c) 2018  lnc. All rights reserved</p>
+  <a href="http://facebook.com">
+    <img src="images/facebook.png"height="20">
+  </a>
+  <a href="http://instagram.com">
+    <img src="images/instagram.png"height="20">
+  </a>
+  <a href="http://twitter.com">
+    <img src="images/twitter.png"height="20">
+  </a>
+  </footer>
+</div>
+</div>
 </body>
 </html>
