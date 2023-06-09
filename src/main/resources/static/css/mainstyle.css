@@ -1,13 +1,17 @@
+@font-face {
+    font-family: 'KOTRA_BOLD-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 * {
     box-sizing: border-box;
+    font-family: 'KOTRA_BOLD-Bold';
 }
-
 body {
     margin: 0;
     min-width: 992px;
-    font-family: "Helvetica";
 }
-
 /* navbar */
 .navbar{
     height: 60px;
@@ -15,6 +19,8 @@ body {
     padding-right: 30px;
 }
 .navbar #logo {
+    float: left;
+    margin-left: 50px;
     line-height: 60px;
 }
 .navbar #logo img{
@@ -29,7 +35,7 @@ body {
 
 }
 .navbar #menu li {
-    float:left;
+    float: left;
     margin-left: 50px;
     line-height: 60px;
 }
@@ -110,9 +116,12 @@ body {
     display: none;
 }
 
+
 ul.imgs{
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 ul.imgs li{
     position: absolute;
