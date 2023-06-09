@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 992px;
+    font-family: "Helvetica";
+}
+
+/* navbar */
+.navbar{
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.navbar #logo {
+    line-height: 60px;
+}
+.navbar #logo img{
+    vertical-align: middle;
+}
+
+.navbar #menu {
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+.navbar #menu li {
+    float:left;
+    margin-left: 50px;
+    line-height: 60px;
+}
+
+.navbar #menu li a {
+    text-decoration: none;
+    color: #545454 ;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* hero header */
+.hero-header{
+    height: 450px;
+    /*background-image: url('http://www.designtwoply.com/wp-content/uploads/2017/11/designtwoply-project086-1.jpg');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+}
+/* products */
+
+.products h3{
+    font-size: 24px;
+    color: #545454;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+.product-list{
+    width: 735px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.product{
+    width: 225px;
+    text-align: center;
+    display: block;
+    color: #545454;
+    text-decoration: none;
+    float: left;
+    margin-left:10px;
+    margin-right: 10px;
+    margin-bottom: 80px;
+
+}
+
+.product-name{
+    margin-top: 20px;
+    margin-bottom: 4px;
+
+}
+.clearfix{
+    clear: both;
+}
+/* footer */
+.footer{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+
+}
+.footer a{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.slider{
+    width: 2000px;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slider input[type=radio]{
+    display: none;
+}
+
+ul.imgs{
+    padding: 0;
+    margin: 0;
+}
+ul.imgs li{
+    position: absolute;
+    left: 640px;
+    transition-delay: 1s;
+    list-style: none;
+    padding: 0;
+    margin: auto;
+}
+
+.bullets{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 2;
+}
+.bullets label{
+    display: inline-block;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.55);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
+    background-color: #fff;
+}
+.slider input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
+    background-color: #fff;
+}
+.slider input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
+    background-color: #fff;
+}
+.slider input[type=radio]:nth-child(4):checked~.bullets>label:nth-child(4){
+    background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+.slider input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+.slider input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+.slider input[type=radio]:nth-child(4):checked~ul.imgs>li:nth-child(4){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
