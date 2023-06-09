@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'KOTRA_BOLD-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.login {width: 410px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) }
+/* transform : translate 본인의 기준으로 움직이는 함수 자신의 크기만큼 50%반만 x축으로가고 자신의 크기만큼 50% 반만 y축으로 간다. */
+
+.login h2 {
+    padding : 0 0 20px;font-size : 32px; border-bottom: 2px solid #111; text-align: center; line-height: 1; /*1의배수 줄간격 */
+    font-family: 'KOTRA_BOLD-Bold';
+}
+.login ul { padding-left:0; margin-left:0;border-radius: 30px; font-family: 'KOTRA_BOLD-Bold';}
+.login li {padding: 0 0 12px;}
+.login li input{width:100%; height: 46px; box-sizing : border-box; border-radius: 15px;}
+.login li input[type="checkbox"]{position : absolute; left: -3000%}
+.login li input[type="checkbox"]+label{ height: 36px; line-height: 36px;}
+.login li input[type="checkbox"]+ label:before { content:""; display: inline-block; width: 18px; height: 18px; border: 1px solid #666; background: #fff;
+vertical-align: middle; margin: 0 10px 0 0;}
+.login li input[type="checkbox"]:checked + label:before{ background: url("#") no-repeat #333; border-color : #333; }
+.login button { width: 100%; height: 56px; font-size : 20px; color: #fff; background: #B9E0FD; border: none; border-radius: 20px;
+    font-family: 'KOTRA_BOLD-Bold';}
+.login div ul{ display: flex; justify-content: center;} /* justify-content : 가로축을 기준으로 좌우에대한 정렬 요소들을 컨텐츠 안에 center정렬 */
+.login div ul li { position: relative; padding : 0 18px; }
+.login div ul li:after{ content:""; position:absolute; right:0; top:0; height:100%; width:1px; background: #111;}
+.login div a {font-size: 14px; color:#111;}
+
+#reviewContents {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 1.5px #D3D3D3;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+#myform fieldset{
+    display: inline-block;
+    direction: rtl;
+    border:0;
+}
+#myform fieldset legend{
+    text-align: right;
+}
+#myform input[type=radio]{
+    display: none;
+}
+#myform label{
+    font-size: 3em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
+}
+#myform label:hover{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform label:hover ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>리뷰 페이지</title>
+    <link rel="stylesheet" href="css/review.css">
+
+    <style>
+
+         section{
+             padding: 100px;
+         }
+        ul li{
+            list-style: none;
+        }
+        .content{
+            position: relative;
+        }
+        .content span{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .box1{
+            border : 3px ;
+            width: 150px;
+            height: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #B9E0FD;
+            border-radius: 30px;
+            color: white;
+            text-align: center;
+            font-family: 'KOTRA_BOLD-Bold';
+        }
+        .box1>a {
+            color: white;
+
+        }
+
+    </style>
+<body>
+<!-- 상단바 로그인 회원가입 기타 등등 시작-->
+
+<section class="login">
+    <link href="/css/css.css" rel="stylesheet"/>
+    <h2 style="font-size: 3em">리뷰 쓰기</h2>
+
+
+    <form class="mb-3" name="myform" id="myform" method="post">
+        <ul>
+            <li><h3>별점 평가</h3>
+                <fieldset>
+                    <input type="radio" name="reviewStar" value="5" id="rate1"><label
+                        for="rate1">★</label>
+                    <input type="radio" name="reviewStar" value="4" id="rate2"><label
+                        for="rate2">★</label>
+                    <input type="radio" name="reviewStar" value="3" id="rate3"><label
+                        for="rate3">★</label>
+                    <input type="radio" name="reviewStar" value="2" id="rate4"><label
+                        for="rate4">★</label>
+                    <input type="radio" name="reviewStar" value="1" id="rate5"><label
+                        for="rate5">★</label>
+                </fieldset>
+            </li>
+            <li>
+                <br><br>
+                <h3>리뷰 작성</h3><br>
+                <textarea class="col-auto form-control" type="text" id="reviewContents"
+                          placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다."></textarea>
+            </li>
+        </ul>
+        <br>
+        <a href="#"> <li><button>완료</button></li> </a>
+        <br><br>
+
+    </form>
+</section>
+<br><br>
+
+</form>
+
+</div>
+</body>
+</html>
