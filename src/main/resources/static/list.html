@@ -2,13 +2,26 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>쇼핑상세보기</title>
+    <title>CAFE</title>
+  <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style2.css">
 
 </head>
 <body>
+<!-- 상단바 로그인 회원가입 기타 등등 시작-->
+<div class="navbar">
+  <a href="#" id="logo">
+    <img src="images/Logo.jpg" width="149" height="50">
+  </a>
+  <ul id="menu">
+    <li><a href="#">shop</a></li>
+    <li><a href="#">cart</a></li>
+    <li><a href="#">login</a></li>
+  </ul>
+</div>
+<!-- 끝 -->
 <div class="product_view"><!--레이아웃 나누기-->
-<h2>소니 스마트밴드 토크 SWR30( 안드로이드 4.42 킷 캣 배전이상 호환가능 )</h2>
+<h2>스타벅스 부평역점</h2>
  <table>
 
    <colgroup><!-- 표의 열을묶는 그룹을 정의한다 <colgroup>은 모든 <thead>, <th>, <tbody>, <tfoot>, <tr> 요소 앞에 위치해야 하며, \
@@ -18,51 +31,45 @@
    </colgroup>
    <tbody>
    <tr>
-   <th class="price">판매가</th>
-   <td>129,000</td>
+   <th class="price">지점명</th>
+   <td>스타벅스 부평역점</td>
    </tr>
    <tr>
-     <th>상품코드</th>
-     <td>C004843</td>
-   </tr>
-   <tr>
-     <th>제조사/공급사</th>
-     <td>CONY / 자강정보통신</td>
-   </tr>
-   <tr>
-     <th>구매수량</th>
-     <td>
-       <div class="length">
-       <input type="number" min="1" value="1">
-       <a href="#">증가</a>
-       <a href="#">감소</a>
-       </div>
-     </td>
-   </tr>
-     <tr>
-     <th>사용가능쿠폰</th>
-     <td>0개</td>
-   </tr>
-   <tr>
-     <th>옵션선택</th>
-     <td>
-       <select> <!-- 드롭다운 리스트 -->
-         <option>기본(+0)</option>
-       </select>
+     <th>주소</th>
+     <td>인천시 부평구 경원대로<br/>
+       <span style="border-radius:2px;border:solid 1px #e9e9e9;padding:0 4px;margin-right:2px;font-size:12px;color:#7f7f7f">지번</span>
+       <span>1377</span>
      </td>
    </tr>
    <tr>
-     <th>배송비</th>
-     <td>무료배송</td>
+     <th>영업시간</th>
+     <td>매일 07:00 ~ 22:00</td>
    </tr>
    <tr>
-     <th class="total">결제금액</th>
-     <td><b>129,000</b>원</td>
+     <th>전화 번호</th>
+     <td>
+       1522-3232
+     </td>
+   </tr>
+
+   <tr>
+     <th>대표 메뉴</th>
+     <td>
+       <span style="padding-right: 20px">콜드브루</span>
+       <span style="padding-left: 20px">4900원</span>
+     </td>
+   </tr>
+   <tr>
+     <th></th>
+     <td>
+       <span style="padding-right: 20px">블론드 카페 아메리카노</span>
+       <span style="padding-left: 20px">5000원</span>
+     </td>
    </tr>
    </tbody>
  </table>
   <div class="img">
-    <img src="images/img.jpg" alt="">
+    <img src="images/Franchise/Starbucks_Bupyung/스타벅스_부평역점_내부.jpg">
     <ul>
       <li class="on"><a href="#"><img src="images/img.jpg" alt=""></a></li>
       <li><a href="#"><img src="images/img.jpg" alt=""></a></li>
