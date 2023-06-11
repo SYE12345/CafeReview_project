@@ -8,7 +8,7 @@ import java.util.*;
 @Repository
 public class MemberRepository implements MemberInterface {
 
-    private static Map<Long, Member> store = new HashMap<>();
+    private static final Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
 
     @Override

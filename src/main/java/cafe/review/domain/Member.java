@@ -13,6 +13,8 @@ public class Member {
     // 비밀번호(공백 불가)
     @NotEmpty
     private String password;
+    @NotEmpty
+    private String password2;
     // 사용자 이름
     @NotEmpty
     private String name;
@@ -26,23 +28,28 @@ public class Member {
     // 기본 생성자
     public Member(){}
 
-    //필수 3개만 입력
-    public Member(String loginId, String password, String name) {
+    // 필수 항목만 입력
+    public Member(String loginId, String password, String password2, String name) {
         this.loginId = loginId;
         this.password = password;
+        this.password2 = password2;
         this.name = name;
     }
-    // 선택사항 email 입력
-    public Member(String loginId, String password, String name, String email) {
+
+    // 선택 중 이메일만 입력
+    public Member(String loginId, String password, String password2, String name, String email) {
         this.loginId = loginId;
         this.password = password;
+        this.password2 = password2;
         this.name = name;
         this.email = email;
     }
-    // 모든 생성자
-    public Member(String loginId, String password, String name, String email, String phoneNumber) {
+
+    // 모두 입력
+    public Member(String loginId, String password, String password2, String name, String email, String phoneNumber) {
         this.loginId = loginId;
         this.password = password;
+        this.password2 = password2;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
