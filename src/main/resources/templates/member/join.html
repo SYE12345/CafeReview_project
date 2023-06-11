@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>회원가입</title>
+  <link rel="stylesheet" href="css/mainstyle.css"
+        th:href="@{/css/mainstyle.css}">
   <link rel="stylesheet" href="css/join.css"
   th:href="@{/css/join.css}">
 
 </head>
 <body>
 <!-- header -->
+<div th:include="@{/main/header.html}"></div>
 <div id="header">
   <img src="images/logo.png" id="logo"></a>
 </div>
@@ -156,5 +159,6 @@
 </div>
 <!-- wrapper -->
 <script src="main.js"></script>
+<div th:include="@{/main/footer.html}"></div>
 </body>
 </html>

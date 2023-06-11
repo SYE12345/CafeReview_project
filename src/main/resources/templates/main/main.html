@@ -17,29 +17,30 @@
     }
 </style>
 <body>
+<div th:include="@{/main/header.html}"></div>
 <!-- 상단바 로그인 회원가입 기타 등등 시작-->
-<div class="navbar">
-    <a href="#" id="logo">
-        <img src="images/logo.png." width="100" height="50">
-    </a>
-    <ul>
-    <ul id="menu">
-        <li class="navbar bg-body-tertiary" >
-            <div class="container-fluid">
-                <form class="d-flex" role="search" action="main.html" th:action method="get">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </li>
-<!--        <li><a>타임리프변경 님환영합니다</a></li>-->
-        <li><a href="login.html" th:href="@{/login}">로그인</a></li>
-        <li><a href="join.html" th:href="@{/join}">회원가입</a></li>
-        <li><a href="#" th:href="@{/details}">카페 리스트</a></li>
+<!--<div class="navbar">-->
+<!--    <a href="#" id="logo">-->
+<!--        <img src="images/logo.png." width="100" height="50">-->
+<!--    </a>-->
+<!--    <ul>-->
+<!--    <ul id="menu">-->
+<!--        <li class="navbar bg-body-tertiary" >-->
+<!--            <div class="container-fluid">-->
+<!--                <form class="d-flex" role="search" action="main.html" th:action method="get">-->
+<!--                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >-->
+<!--                    <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </li>-->
+<!--&lt;!&ndash;        <li><a>타임리프변경 님환영합니다</a></li>&ndash;&gt;-->
+<!--        <li><a href="login.html" th:href="@{/login}">로그인</a></li>-->
+<!--        <li><a href="join.html" th:href="@{/join}">회원가입</a></li>-->
+<!--        <li><a href="#" th:href="@{/details}">카페 리스트</a></li>-->
 
-    </ul>
-    </ul>
-</div>
+<!--    </ul>-->
+<!--    </ul>-->
+<!--</div>-->
 
 <!-- 끝 -->
 
@@ -84,15 +85,16 @@
     </div><br>
 </section>
 <!-- 푸터 시작 부분 -->
-<div>
-    <footer style="background-color:#DCDCDC">
-        <p>인천시 부평구 더 조은(주)카페 플레이스</p>
-        <p>사업자등록번호 : 215-86-93600·통신판매업신고 : 2009-서울송파-0069호·부가통신사업신고필증 : 021129</p>
-        <p>webmaster@iloom.com·Copyright (c) 2018  lnc. All rights reserved</p>
+<div th:include="@{/main/footer.html}"></div>
+<!--<div>-->
+<!--    <footer style="background-color:#DCDCDC">-->
+<!--        <p>인천시 부평구 더 조은(주)카페 플레이스</p>-->
+<!--        <p>사업자등록번호 : 215-86-93600·통신판매업신고 : 2009-서울송파-0069호·부가통신사업신고필증 : 021129</p>-->
+<!--        <p>webmaster@iloom.com·Copyright (c) 2018  lnc. All rights reserved</p>-->
 
 
-    </footer>
-</div>
+<!--    </footer>-->
+<!--</div>-->
 <!-- 푸터 끝 -->
 </body>
 </html>
