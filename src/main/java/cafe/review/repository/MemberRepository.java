@@ -1,10 +1,11 @@
 package cafe.review.repository;
 
 import cafe.review.domain.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
-
+@Slf4j
 @Repository
 public class MemberRepository implements MemberInterface {
 
@@ -14,6 +15,7 @@ public class MemberRepository implements MemberInterface {
     @Override
     public Member save(Member member) {
         member.setId(++sequence);
+        log.info("save] "+member);
         store.put(member.getId(), member);
         return member;
     }
