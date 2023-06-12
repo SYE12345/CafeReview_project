@@ -12,13 +12,14 @@
     </insert>
 
 <!--호출구문 : void update(@Param("id") Long id, @Param("updateParam") ItemUpdateDto updateParam); -->
-<!--    <update id="update">-->
-<!--        update member-->
-<!--        set password=#{updateParam.password},-->
-<!--            email=#{updateParam.email},-->
-<!--            phone_number=#{updateParam.phone_number}-->
-<!--        where id = #{id}-->
-<!--    </update>-->
+    <update id="update">
+        update member
+        set password=#{updateParam.password},
+            password2=#{updateParam.password},
+            email=#{updateParam.email},
+            phone_number=#{updateParam.phoneNumber}
+        where id = #{id}
+    </update>
 
 <!-- resultType: 조회의 결과를 받을 타입을 명시
 특별한 설정이 없다면  타입의 패키지 경로까지 명시해 줘야 한다.
@@ -28,11 +29,41 @@ mybatis.type-aliases-package=hello.itemservice.domain
 mybatis.configuration.map-underscore-to-camel-case=true 속성을 지정한 덕분에
 언더스코어를 카멜 표기법으로 자동으로 처리해준다. ( item_name itemName )
  -->
-<!--    <select id="findById" resultType="Item">-->
-<!--        select id, item_name, price, quantity-->
-<!--        from item-->
-<!--        where id = #{id}-->
+    <select id="findByLoginId" resultType="member">
+        select *
+        from member
+        where login_id=#{loginId}
+    </select>
+
+    <select id="findById" resultType="member">
+        select *
+        from member
+        where id = #{id}
+    </select>
+
+    <select id="findAll" resultType="member">
+        select *
+        from member
+    </select>
+
+    <select id="findByNameEmail" resultType="member">
+        select login_id
+        from member
+        where name=#{name} and email=#{email}
+    </select>
+
+<!--    <select id="findNamePhone" resultType="member">-->
+<!--        select login_id-->
+<!--        from member-->
+<!--        where loginId=#{loginId} and phoneNumber=#{phoneNumber}-->
 <!--    </select>-->
+
+    <select id="findPasswordNameEmail" resultType="member">
+        select password
+        from member
+        where name=#{name} and email=#{email}
+    </select>
+
 
 <!-- if 조건을 하나라도 만족하면 where 구문을 추가한다.
 두가지가 모두 존재하는 경우
@@ -54,49 +85,8 @@ FROM item
 WHERE item_name LIKE 'item'
 AND price <=1000
 -->
-<!--    <select id="findAll" resultType="Item">-->
-<!--        select id, item_name, price, quantity-->
-<!--        from item-->
-<!--        <where>-->
-<!--            <if test="itemName != null and itemName != ''">-->
-<!--                AND item_name LIKE '%' || #{itemName} || '%'-->
-<!--            </if>-->
-<!--            <if test="maxPrice != null">-->
-<!--                and price &lt;= #{maxPrice}-->
-<!--            </if>-->
-<!--        </where>-->
-<!--    </select>-->
 
-<!--  만약 MyBatis와 같은 동적 Query를  사용하지 않는다면  아래와 같은 동적 쿼리를 수동으로 작성해야 한다.
- public List<Item> findAll(ItemSearchCond cond) {
-        String itemName = cond.getItemName();
-        Integer maxPrice = cond.getMaxPrice();
 
-        String sql = "select id, item_name, price, quantity from item";
-        //동적 쿼리
-        if (StringUtils.hasText(itemName) || maxPrice != null) {
-            sql += " where";
-        }
 
-        boolean andFlag = false;
-        List<Object> param = new ArrayList<>();
-        if (StringUtils.hasText(itemName)) {
-            sql += " item_name like concat('%',?,'%')";
-            param.add(itemName);
-            andFlag = true;
-        }
-
-        if (maxPrice != null) {
-            if (andFlag) {
-                sql += " and";
-            }
-            sql += " price <= ?";
-            param.add(maxPrice);
-        }
-
-        log.info("sql={}", sql);
-        return template.query(sql, itemRowMapper(), param.toArray());
-    }
--->
 
 </mapper>

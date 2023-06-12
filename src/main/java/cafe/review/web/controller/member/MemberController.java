@@ -1,12 +1,9 @@
 package cafe.review.web.controller.member;
 
-import cafe.review.domain.Member;
+import cafe.review.domain.member.Member;
 import cafe.review.service.MemberServiceInterface;
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

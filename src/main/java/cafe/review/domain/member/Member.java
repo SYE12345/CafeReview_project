@@ -1,4 +1,4 @@
-package cafe.review.domain;
+package cafe.review.domain.member;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package cafe.review.web.controller.login;
 
-import cafe.review.domain.Member;
+import cafe.review.domain.member.Member;
 import cafe.review.repository.SessionConst;
 import cafe.review.service.LoginInterface;
 import cafe.review.service.MemberServiceInterface;
