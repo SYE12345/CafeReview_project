@@ -7,6 +7,7 @@ import cafe.review.service.MemberServiceInterface;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@Data
 @Controller
 @RequiredArgsConstructor
 public class LoginController {
@@ -56,16 +58,19 @@ public class LoginController {
     }
 
     @GetMapping("/find_id")
-    public String find_id_form(@ModelAttribute("find_id_form") findLoginIdForm form){
-        return "/find_id/find_id";
+    public String find_LoginId_Form(@ModelAttribute("member") findLoginIdForm form){
+        return "/login/find_LoginId";
     }
 
     @PostMapping("/find_id")
-    public String find_id(@RequestParam("id") String id, String email, Model model){
-        Member result = memberServiceInterface.findById(id, email).get();
+    public String find_Loginid(@RequestParam("name") String name, @RequestParam("email") String email, Model model){
+        Member result = memberServiceInterface.findByNameEmail(name, email).get();
         model.addAttribute("member", result);
         return "login";
+
     }
+
+
 
 
 }
