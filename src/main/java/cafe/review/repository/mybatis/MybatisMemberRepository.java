@@ -3,12 +3,16 @@ package cafe.review.repository.mybatis;
 import cafe.review.domain.Member;
 import cafe.review.repository.MemberInterface;
 import cafe.review.repository.MemberUpdateDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
+@Repository
 public class MybatisMemberRepository implements MemberInterface {
-    private MemberMapper memberMapper;
+    private final MemberMapper memberMapper;
     @Override
     public Member save(Member member) {
         memberMapper.save(member);
