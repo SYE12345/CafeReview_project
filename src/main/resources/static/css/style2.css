@@ -30,8 +30,11 @@ color:#fff; border-radius: 2px; line-height: 42px; text-decoration-line: none;}
 .product_view .btns > a.btn1{ background: #666;}
 .product_view .btns > a.btn2{ background: #0a56a9;}
 
-#wrapper{
-    width: 100px;
+.wrapper{
+    padding-top:5px;
+    padding-left:10px;
+    width: 720px;
+    float: left;
     margin: 0 auto;
 }
 #wrapper2{
@@ -39,11 +42,17 @@ color:#fff; border-radius: 2px; line-height: 42px; text-decoration-line: none;}
     margin: 0 auto;
 
 }
+footer{
+
+}
 aside{
+    margin: 0 auto;
     float: right;
     width: 450px;
     height: auto;
-    margin-top: 0px;
+    padding-top:20px;
+    padding-left:10px;
+    padding-right:10px;
     border: 1px solid black;
     text-align: center;
 }
