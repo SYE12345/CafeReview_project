@@ -13,9 +13,9 @@
                         </form>
                     </div>
                 </li>
-                <!--        <li><a>타임리프변경 님환영합니다</a></li>-->
-                <li><a href="login.html" th:href="@{/login}">로그인</a></li>
-                <li><a href="join.html" th:href="@{/join}">회원가입</a></li>
+                <li><a th:text="|${member.name}님 환영합니다|">로그인 님환영합니다</a></li>
+                <li><a href="myInfo.html" th:href="@{/myInfo}">내 정보</a></li>
+                <li><a href="main.html" th:href="@{/logout}">로그아웃</a></li>
                 <li><a href="#" th:href="@{/details}">카페 리스트</a></li>
 
             </ul>

@@ -12,7 +12,7 @@
 
 <body>
 <!-- header -->
-<div th:include="@{/main/header.html}"></div>
+<div th:insert="~{/main/header.html}"></div>
 <div id="header">
   <img src="images/logo.png" id="logo"></a>
 </div>
@@ -160,6 +160,6 @@
 </div>
 <!-- wrapper -->
 <script src="main.js"></script>
-<div th:include="@{/main/footer.html}"></div>
+<div th:insert="~{/main/footer.html}"></div>
 </body>
 </html>
