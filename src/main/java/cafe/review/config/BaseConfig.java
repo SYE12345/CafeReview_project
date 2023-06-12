@@ -27,8 +27,7 @@ public class BaseConfig {
     }
 
     @Bean
-    public CafeRepository cafeRepository() {
-        return new CafeRepository();
+    public CafeRepository cafeRepository(){
+     return new CafeRepository();
     }
-
 }
