@@ -60,15 +60,26 @@ public class LoginController {
 
     @GetMapping("/find_id")
     public String find_LoginId_Form(@ModelAttribute("member") findLoginIdForm form){
-        return "/login/find_LoginId";
+        return "login/find_LoginId";
     }
 
     @PostMapping("/find_id")
     public String find_Loginid(@RequestParam("name") String name, @RequestParam("email") String email, Model model){
         Member result = memberServiceInterface.findByNameEmail(name, email).get();
         model.addAttribute("member", result);
-        return "login";
+        return "redirect:/";
 
+    }
+
+    @GetMapping("/find_pw")
+    public String find_PassWord_Form(@ModelAttribute("member") findPasswordForm form){
+        return  "login/find_pw";
+    }
+
+    @PostMapping("/find_pw")
+    public String find_PassWord(@RequestParam("loginId") String loginId,@RequestParam("name") String name, @RequestParam("email") String email, Model model){
+        Member result = memberServiceInterface.findPasswordNameEmail(loginId, name, email).get();
+        return "redirect:/";
     }
 
 

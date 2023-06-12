@@ -1,13 +1,12 @@
 package cafe.review.web.controller.login;
 
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @Data
-public class findLoginIdForm {
+public class findPasswordForm {
 
-    @NotEmpty
+    private String loginId;
     private String name;
-    @NotEmpty
     private String email;
+
 }
