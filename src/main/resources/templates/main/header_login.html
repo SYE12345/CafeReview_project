@@ -15,7 +15,8 @@
                 </li>
                 <li><a th:text="|${member.name}님 환영합니다|">로그인 님환영합니다</a></li>
                 <li><a href="myInfo.html" th:href="@{/myInfo}">내 정보</a></li>
-                <li><a href="main.html" th:href="@{/logout}">로그아웃</a></li>
+                <li><form th:action="@{/logout}" method="post">
+                    <button type="submit">로그아웃</button></form></li>
                 <li><a href="#" th:href="@{/details}">카페 리스트</a></li>
 
             </ul>
