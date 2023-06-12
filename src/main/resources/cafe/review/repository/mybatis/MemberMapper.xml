@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- namespace에 Mapper 인터페이스를 지정해야 한다. -->
 <mapper namespace="cafe.review.repository.mybatis.MemberMapper">
-<!--
-id="save" 인터페이스 매퍼에서 설정한 매서드 이름을 지정
 
- #{} : 인터페이스에 정의된 파라메터를 매핑, 파라메터 타입이 클래스라면 클래스의 필드를 매핑해 준다.
-#{}의 문법은 JDBC의 ? 문자열을 통하여 치환하는 구조와 동일
-useGeneratedKeys="true": 데이터베이스에서 자동 생성된 키 값을 사용
-keyProperty="id": 자동 생성된 키 값을 매핑할 객체의 id 속성에 자동으로 할당
-insert의 경우 도메인 클래스의 필드명을 자동으로 사용할 수 있다.
-< 호출구문 : void save(Item item)>
-order="BEFORE" 메인쿼리 insert문 수행하기 전에 실행
---> <!-- sequence 기능 자동으로 -->
-    <insert id="save">
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
         <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE">
             SELECT member_seq.NEXTVAL FROM DUAL
         </selectKey>
         INSERT INTO member (id, login_id, password, password2, name, email, phone_number)
-        VALUES (#{id}, #{loginId}, #{password}, #{password2}, #{name},#{email}, #{phoneNumber})
+        VALUES (#{id}, #{loginId}, #{password}, #{password2}, #{name}, #{email}, #{phoneNumber})
     </insert>
 
 <!--호출구문 : void update(@Param("id") Long id, @Param("updateParam") ItemUpdateDto updateParam); -->

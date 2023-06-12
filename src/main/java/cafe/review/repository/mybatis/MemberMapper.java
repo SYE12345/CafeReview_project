@@ -3,12 +3,13 @@ package cafe.review.repository.mybatis;
 import cafe.review.domain.Member;
 import cafe.review.repository.MemberUpdateDto;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Optional;
 @Mapper
 public interface MemberMapper {
-    Member save(Member member);
+    void save(Member member);
 
     // 레코드 아이디로 찾기
     Optional<Member> findById(Long id);
@@ -32,7 +33,7 @@ public interface MemberMapper {
     Optional<Member> findPasswordNamePhone(String loginId, String name, String email);
 
     // 회원 정보 수정용(MemberUpdateDto 클래스 사용)
-    void update(Long id, MemberUpdateDto memberUpdateParam);
+    void update(@Param("id") Long id, @Param("memberUpdateParam") MemberUpdateDto memberUpdateParam);
 
 
 }
