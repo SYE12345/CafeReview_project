@@ -1,6 +1,7 @@
 package cafe.review;
 
 import cafe.review.config.BaseConfig;
+import cafe.review.config.MybatisConfig;
 import cafe.review.repository.MemberInterface;
 import cafe.review.repository.MemberRepository;
 import cafe.review.service.MemberServiceInterface;
@@ -12,9 +13,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 
-@Import(BaseConfig.class)
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class},
-						scanBasePackages = "cafe.review.web")
+@Import(MybatisConfig.class)
+@SpringBootApplication(scanBasePackages = "cafe.review.web")
 public class ReviewApplication {
 
 	public static void main(String[] args) {

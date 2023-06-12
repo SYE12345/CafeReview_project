@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace에 Mapper 인터페이스를 지정해야 한다. -->
-<mapper namespace="hello.itemservice.repository.mybatis.ItemMapper">
+<mapper namespace="cafe.review.repository.mybatis.MemberMapper">
 <!--
 id="save" 인터페이스 매퍼에서 설정한 매서드 이름을 지정
 
@@ -16,20 +16,20 @@ order="BEFORE" 메인쿼리 insert문 수행하기 전에 실행
 --> <!-- sequence 기능 자동으로 -->
     <insert id="save">
         <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE">
-            SELECT item_seq.NEXTVAL FROM DUAL
+            SELECT member_seq.NEXTVAL FROM DUAL
         </selectKey>
-        INSERT INTO item (id, item_name, price, quantity)
-        VALUES (#{id}, #{itemName}, #{price}, #{quantity})
+        INSERT INTO member (id, login_id, password, password2, name, email, phone_number)
+        VALUES (#{id}, #{loginId}, #{password}, #{password2}, #{name},#{email}, #{phoneNumber})
     </insert>
 
 <!--호출구문 : void update(@Param("id") Long id, @Param("updateParam") ItemUpdateDto updateParam); -->
-    <update id="update">
-        update item
-        set item_name=#{updateParam.itemName},
-            price=#{updateParam.price},
-            quantity=#{updateParam.quantity}
-        where id = #{id}
-    </update>
+<!--    <update id="update">-->
+<!--        update member-->
+<!--        set password=#{updateParam.password},-->
+<!--            email=#{updateParam.email},-->
+<!--            phone_number=#{updateParam.phone_number}-->
+<!--        where id = #{id}-->
+<!--    </update>-->
 
 <!-- resultType: 조회의 결과를 받을 타입을 명시
 특별한 설정이 없다면  타입의 패키지 경로까지 명시해 줘야 한다.
@@ -39,11 +39,11 @@ mybatis.type-aliases-package=hello.itemservice.domain
 mybatis.configuration.map-underscore-to-camel-case=true 속성을 지정한 덕분에
 언더스코어를 카멜 표기법으로 자동으로 처리해준다. ( item_name itemName )
  -->
-    <select id="findById" resultType="Item">
-        select id, item_name, price, quantity
-        from item
-        where id = #{id}
-    </select>
+<!--    <select id="findById" resultType="Item">-->
+<!--        select id, item_name, price, quantity-->
+<!--        from item-->
+<!--        where id = #{id}-->
+<!--    </select>-->
 
 <!-- if 조건을 하나라도 만족하면 where 구문을 추가한다.
 두가지가 모두 존재하는 경우
@@ -65,18 +65,18 @@ FROM item
 WHERE item_name LIKE 'item'
 AND price <=1000
 -->
-    <select id="findAll" resultType="Item">
-        select id, item_name, price, quantity
-        from item
-        <where>
-            <if test="itemName != null and itemName != ''">
-                AND item_name LIKE '%' || #{itemName} || '%'
-            </if>
-            <if test="maxPrice != null">
-                and price &lt;= #{maxPrice}
-            </if>
-        </where>
-    </select>
+<!--    <select id="findAll" resultType="Item">-->
+<!--        select id, item_name, price, quantity-->
+<!--        from item-->
+<!--        <where>-->
+<!--            <if test="itemName != null and itemName != ''">-->
+<!--                AND item_name LIKE '%' || #{itemName} || '%'-->
+<!--            </if>-->
+<!--            <if test="maxPrice != null">-->
+<!--                and price &lt;= #{maxPrice}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
 
 <!--  만약 MyBatis와 같은 동적 Query를  사용하지 않는다면  아래와 같은 동적 쿼리를 수동으로 작성해야 한다.
  public List<Item> findAll(ItemSearchCond cond) {
