@@ -2,6 +2,7 @@ package cafe.review.config;
 
 import cafe.review.repository.MemberInterface;
 import cafe.review.repository.MemberRepository;
+import cafe.review.repository.cafe.CafeRepository;
 import cafe.review.service.LoginInterface;
 import cafe.review.service.LoginService;
 import cafe.review.service.MemberService;
@@ -25,5 +26,9 @@ public class BaseConfig {
     return new MemberRepository();
     }
 
+    @Bean
+    public CafeRepository cafeRepository() {
+        return new CafeRepository();
+    }
 
 }

@@ -2,6 +2,7 @@ package cafe.review.config;
 
 import cafe.review.repository.MemberInterface;
 import cafe.review.repository.MemberRepository;
+import cafe.review.repository.cafe.CafeRepository;
 import cafe.review.repository.mybatis.MemberMapper;
 import cafe.review.repository.mybatis.MybatisMemberRepository;
 import cafe.review.service.LoginInterface;
@@ -29,6 +30,11 @@ public class MybatisConfig {
     public MemberInterface memberInterface() {
         return new MybatisMemberRepository(memberMapper);
     }
+
+//    @Bean
+//    public CafeRepository cafeRepository() {
+//        return cafeRepository();
+//    }
 
 
 }
