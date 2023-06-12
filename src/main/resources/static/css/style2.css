@@ -29,6 +29,7 @@ appearance: none; -webkit-appearance: none; -moz-appearance: none; background:ur
 color:#fff; border-radius: 2px; line-height: 42px; text-decoration-line: none;}
 .product_view .btns > a.btn1{ background: #666;}
 .product_view .btns > a.btn2{ background: #0a56a9;}
+
 #wrapper{
     width: 100px;
     margin: 0 auto;
