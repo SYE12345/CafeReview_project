@@ -16,7 +16,6 @@ import java.util.Map;
 
 @Slf4j
 @Controller
-@RequestMapping("cafe/All_list")
 @RequiredArgsConstructor
 public class CafeController {
     private final CafeRepository cafeRepository;
@@ -24,7 +23,7 @@ public class CafeController {
     @GetMapping
     public String All_list(Model model){
         List<CafeMember> cafeMembers = CafeRepository.findAll();
-        model.addAttribute("cafe",cafeMembers);
+        model.addAttribute("cafes",cafeMembers);
         return "cafe/All_list";
     }
 

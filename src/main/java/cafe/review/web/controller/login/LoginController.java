@@ -3,6 +3,7 @@ package cafe.review.web.controller.login;
 import cafe.review.domain.member.Member;
 import cafe.review.repository.SessionConst;
 import cafe.review.service.LoginInterface;
+import cafe.review.service.MemberService;
 import cafe.review.service.MemberServiceInterface;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
