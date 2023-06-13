@@ -25,7 +25,7 @@ public class CafeController {
         return "cafe/All_list";
     }
 
-    @GetMapping("All_list/{cafeName}")
+    @GetMapping("{cafeName}")
     public String deailsForm(@PathVariable String cafeName, Model model){
         CafeMember cafeMember = cafeMemberServiceInterface.findByCafeName(cafeName).get();
         model.addAttribute("cafes",cafeMember);

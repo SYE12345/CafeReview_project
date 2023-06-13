@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<!--<html lang="ko" xmlns="http://www.w3.org/1999/html">-->
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,8 @@
   th:href="@{/css/style2.css}">
   <link rel="stylesheet" href="css/mainstyle.css"
   th:href="@{/css/mainstyle.css}">
-
+</head>
+<body>
 <!--        <div class="navbar">-->
 <!--        <a href="main.html" id="logo">-->
 <!--            <img src="images/logo.png." width="100" height="50">-->
@@ -36,28 +37,32 @@
 
 
   <div class="detail-header">
-    <table>
-      <tl>
+      <table th:each="cafe : ${cafes}">
+      <tr>
         <td>
-          <img src="images/Cafe/Dozenmatter/더즌매터1.jpg" width="360" height="350">
+          <img src="images/Cafe/Dozenmatter/더즌매터1.jpg" width="360" height="350"
+          th:src="|images/${cafe.cafeType}/${cafe.cafeName}/1.jpg|">
         </td>
         <td>
-          <img src="images/Cafe/Dozenmatter/더즌매터2.jpg" width="360" height="350">
+          <img src="images/Cafe/Dozenmatter/더즌매터2.jpg" width="360" height="350"
+               th:src="|images/${cafe.cafeType}/${cafe.cafeName}/2.jpg|">
         </td>
         <td>
-          <img src="images/Cafe/Dozenmatter/더즌매터3.jpg" width="360" height="350">
+          <img src="images/Cafe/Dozenmatter/더즌매터3.jpg" width="360" height="350"
+               th:src="|images/${cafe.cafeType}/${cafe.cafeName}/내부1.jpg|">
         </td>
         <td>
-          <img src="images/Cafe/Dozenmatter/더즌매터4.jpg" width="360" height="350">
+          <img src="images/Cafe/Dozenmatter/더즌매터4.jpg" width="360" height="350"
+               th:src="|images/${cafe.cafeType}/${cafe.cafeName}/3.jpg|">
         </td>
         <td>
-          <img src="images/Cafe/Dozenmatter/더즌매터5.jpg" width="360" height="350">
+          <img src="images/Cafe/Dozenmatter/더즌매터5.jpg" width="360" height="350"
+               th:src="|images/${cafe.cafeType}/${cafe.cafeName}/4.jpg|">
         </td>
-      </tl>
+      </tr>
     </table>
   </div>
-</head>
-<body>
+
 <!-- 상단바 로그인 회원가입 기타 등등 시작-->
 
 <!-- 끝 -->
@@ -86,10 +91,6 @@
      </td>
    </tr>
    <tr>
-     <th>영업시간</th>
-     <td>매일 11:00 ~ 22:00</td>
-   </tr>
-   <tr>
      <th>전화 번호</th>
      <td th:text="${cafe.cafeNumber}">
          070-8860-4926
@@ -116,8 +117,9 @@
    </tr>
    </tbody>
  </table>
-  <div class="img">
-    <img src="images/Cafe/Dozenmatter/더즌매터1.jpg">
+  <div class="img" th:each="cafe : ${cafes}">
+    <img src="images/Cafe/Dozenmatter/더즌매터1.jpg"
+         th:src="|images/${cafe.cafeType}/${cafe.cafeName}/내부1.jpg|">
 <!--    <ul>-->
 <!--      <li class="on"><a href="#"><img src="images/img.jpg" alt=""></a></li>-->
 <!--      <li><a href="imgages/logo.jpg"><img src="images/img.jpg" alt=""></a></li>-->
@@ -135,10 +137,13 @@
 
 <div class="wrapper2">
     <section>
-        <aside>
-            <img src="images/Cafe/Dozenmatter/map.jpg" width="230" heaight="220">
-            <img src="images/Personal/dozenmatter/더즌매터1.jpg" width="230" height="220">
-            <img src="images/Personal/dozenmatter/더즌매터2.jpg" width="230" height="220">
+        <aside th:each="cafe : ${cafes}">
+            <img src="images/Cafe/Dozenmatter/map.jpg" width="230" heaight="220"
+                 th:src="|images/${cafe.cafeType}/${cafe.cafeName}/지도.jpg|">
+            <img src="images/Personal/dozenmatter/더즌매터1.jpg" width="230" height="220"
+                 th:src="|images/${cafe.cafeType}/${cafe.cafeName}/1.jpg|">
+            <img src="images/Personal/dozenmatter/더즌매터2.jpg" width="230" height="220"
+                 th:src="|images/${cafe.cafeType}/${cafe.cafeName}/4.jpg|">
         </aside>
     </section>
 </div>
