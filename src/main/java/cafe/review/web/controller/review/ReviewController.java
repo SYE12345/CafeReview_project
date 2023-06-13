@@ -15,10 +15,14 @@ public class ReviewController {
 
 
     @GetMapping("/review_list")
-    public String reviewForm(Model model){
+    public String reviewlistForm(Model model){
         model.addAttribute("review", new Review());
         return "review/review_list";
     }
 
-
+    @GetMapping("/review")
+    public String reviewForm(Model model){
+        model.addAttribute("review", new Review());
+        return "review/review";
+    }
 }
