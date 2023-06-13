@@ -26,12 +26,12 @@ public class ReviewApplication {
 	public TestMemberDataInit testMemberDataInit(MemberServiceInterface memberServiceInterface){
 		return new TestMemberDataInit(memberServiceInterface);
 	}
-	@Bean
-
-	@Profile("local")
-	public TestCafeDataInit testCafeDataInit(CafeMemberServiceInterface cafeRepository){
-		return new TestCafeDataInit(cafeRepository);
-	}
+//	@Bean
+//
+//	@Profile("local")
+//	public TestCafeDataInit testCafeDataInit(CafeMemberServiceInterface cafeRepository){
+//		return new TestCafeDataInit(cafeRepository);
+//	}
 
 //	@Bean
 //

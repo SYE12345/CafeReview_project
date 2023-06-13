@@ -4,19 +4,19 @@
 <mapper namespace="cafe.review.repository.mybatis.CafeMemberMapper">
 
     <insert id="save" useGeneratedKeys="true" keyProperty="cafeId">
-        <selectKey keyProperty="cafeId" resultType="java.lang.long" order="BEFORE">
+        <selectKey keyProperty="cafeId" resultType="java.lang.Long" order="BEFORE">
             SELECT cafe_member_seq.NEXTVAL FROM DUAL
         </selectKey>
-            insert into cafe_member(cafe_id, cafe_name, address, cafe_number, menu1,menu2,menu3,cafe_type)
+            insert into cafe_member(cafe_id, cafe_name, address, cafe_number, menu1, menu2, menu3, cafe_type)
             values (#{cafeId}, #{cafeName}, #{address}, #{cafeNumber}, #{menu1},#{menu2},#{menu3},#{cafeType})
     </insert>
 
-    <select id="findAll" resultType="cafe_member">
+    <select id="findAll" resultType="cafemember">
         select *
         from cafe_member
     </select>
 
-    <select id="findByCafeName" resultType="cafe_member">
+    <select id="findByCafeName" resultType="cafemember">
         select *
         from cafe_member
         where cafe_name=#{cafeName}
