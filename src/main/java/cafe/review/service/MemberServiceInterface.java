@@ -1,6 +1,6 @@
 package cafe.review.service;
 
-import cafe.review.domain.member.Member;
+import cafe.review.domain.Member;
 import cafe.review.repository.MemberUpdateDto;
 
 import java.util.List;

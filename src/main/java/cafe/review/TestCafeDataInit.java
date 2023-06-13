@@ -1,9 +1,7 @@
 package cafe.review;
 
 import cafe.review.domain.cafe.CafeMember;
-import cafe.review.domain.member.Member;
 import cafe.review.repository.cafe.CafeRepository;
-import cafe.review.service.MemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationReadyEvent;

@@ -1,6 +1,6 @@
 package cafe.review.repository;
 
-import cafe.review.domain.member.Member;
+import cafe.review.domain.Member;
 
 import java.util.List;
 import java.util.Optional;

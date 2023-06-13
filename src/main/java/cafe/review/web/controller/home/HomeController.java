@@ -1,6 +1,6 @@
 package cafe.review.web.controller.home;
 
-import cafe.review.domain.member.Member;
+import cafe.review.domain.Member;
 import cafe.review.repository.SessionConst;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;

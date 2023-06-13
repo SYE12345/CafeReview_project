@@ -1,6 +1,6 @@
 package cafe.review.web.controller.member;
 
-import cafe.review.domain.member.Member;
+import cafe.review.domain.Member;
 import cafe.review.service.MemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

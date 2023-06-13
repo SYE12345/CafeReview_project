@@ -1,6 +1,6 @@
 package cafe.review.repository.mybatis;
 
-import cafe.review.domain.member.Member;
+import cafe.review.domain.Member;
 import cafe.review.repository.MemberUpdateDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -20,14 +20,15 @@ public interface MemberMapper {
     // 전체 출력
     List<Member> findAll();
 
+
     // 아이디 찾기용 이름과 이메일로 찾기
-    Optional<Member> findByNameEmail(String name, String email);
+    Optional<Member> findByNameEmail(@Param("name") String name, @Param("email") String email);
 
     // 아이디 찾기용 이름과 폰번호로 찾기
     Optional<Member> findByNamePhone(String name, String phone);
 
     // 비밀번호 찾기용 (로그인 아이디, 이름, 이메일)
-    Optional<Member> findPasswordNameEmail(String loginId, String name, String email);
+    Optional<Member> findPasswordNameEmail(@Param("loginId")String loginId, @Param("name")String name, @Param("email")String email);
 
     // 비밀번호 찾기용(로그인 아이디, 이름, 폰번호)
     Optional<Member> findPasswordNamePhone(String loginId, String name, String email);

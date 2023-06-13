@@ -1,9 +1,8 @@
 package cafe.review.web.controller.login;
 
-import cafe.review.domain.member.Member;
+import cafe.review.domain.Member;
 import cafe.review.repository.SessionConst;
 import cafe.review.service.LoginInterface;
-import cafe.review.service.MemberService;
 import cafe.review.service.MemberServiceInterface;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -67,7 +66,7 @@ public class LoginController {
     public String find_Loginid(@RequestParam("name") String name, @RequestParam("email") String email, Model model){
         Member result = memberServiceInterface.findByNameEmail(name, email).get();
         model.addAttribute("member", result);
-        return "redirect:/";
+        return "login/find_LoginId_result";
 
     }
 
@@ -79,7 +78,8 @@ public class LoginController {
     @PostMapping("/find_pw")
     public String find_PassWord(@RequestParam("loginId") String loginId,@RequestParam("name") String name, @RequestParam("email") String email, Model model){
         Member result = memberServiceInterface.findPasswordNameEmail(loginId, name, email).get();
-        return "redirect:/";
+        model.addAttribute("member", result);
+        return "login/find_pw_result";
     }
 
 

@@ -46,8 +46,8 @@ mybatis.configuration.map-underscore-to-camel-case=true 속성을 지정한 덕�
         from member
     </select>
 
-    <select id="findByNameEmail" resultType="member">
-        select login_id
+    <select id="findByNameEmail" resultType="Member">
+        select *
         from member
         where name=#{name} and email=#{email}
     </select>
@@ -59,9 +59,9 @@ mybatis.configuration.map-underscore-to-camel-case=true 속성을 지정한 덕�
 <!--    </select>-->
 
     <select id="findPasswordNameEmail" resultType="member">
-        select password
+        select *
         from member
-        where login_id=#{LoginId} and name=#{name} and email=#{email}
+        where login_id=#{loginId} and name=#{name} and email=#{email}
     </select>
 
 

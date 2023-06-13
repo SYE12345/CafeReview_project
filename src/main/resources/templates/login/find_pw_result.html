@@ -1,10 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <link href="/css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}"
+          rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>PW 찾기 결과 </h2>
+    </div>
 
+    <!--    <form action="find_LoginId_result.html" th:action th:object="#{member}" method="post">-->
+
+    <div>
+        <label for="loginid">ID</label>
+        <input type="text" class="form-control" readonly id="loginId" th:field="${member.loginId}" value="namu">
+    </div>
+
+    <div>
+        <label for="password">비밀번호</label>
+        <input type="text" class="form-control" readonly id="password" th:field="${member.password}">
+    </div>
+    <hr class="my-4">
+
+    <div class="col">
+        <button class="w-100 btn btn-secondary btn-lg"
+                onclick="location.href='login.html'"
+                th:onclick="|location.href='@{/login}'|"
+                type="button">로그인창으로</button>
+    </div>
+</div>>
+</div> <!-- /container -->
 </body>
 </html>

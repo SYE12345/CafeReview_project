@@ -1,6 +1,5 @@
-
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <link href="/css/bootstrap.min.css"
@@ -17,14 +16,15 @@
     <div class="py-5 text-center">
         <h2>ID 찾기 결과 </h2>
     </div>
-    <form action="" method="post">
+
+<!--    <form action="find_LoginId_result.html" th:action th:object="#{member}" method="post">-->
         <div>
             <label for="name">회원 이름</label>
-            <input type="text" class="form-control" readonly id="name" name="name" value="김나무">
+            <input type="text" class="form-control" readonly id="name" th:field="${member.name}" value="김나무">
         </div>
         <div>
             <label for="loginid">ID</label>
-            <input type="text" class="form-control" readonly id="loginId" name="loginId" value="namu">
+            <input type="text" class="form-control" readonly id="loginId" th:field="${member.loginId}" value="namu">
         </div>
 
         <hr class="my-4">
@@ -32,10 +32,10 @@
         <div class="col">
             <button class="w-100 btn btn-secondary btn-lg"
                     onclick="location.href='login.html'"
-                    th:onclick="|location.href='@{/login.html'|"
-                    type="button">목록으로</button>
+                    th:onclick="|location.href='@{/login}'|"
+                    type="button">로그인창으로</button>
         </div>
 </div>>
-</div> <!-- /container -->>
+</div> <!-- /container -->
 </body>
 </html>
