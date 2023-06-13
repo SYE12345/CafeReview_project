@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -22,6 +23,13 @@ public class CafeController {
         List<CafeMember> cafeMembers = cafeMemberServiceInterface.findAll();
         model.addAttribute("cafes", cafeMembers);
         return "cafe/All_list";
+    }
+
+    @GetMapping("All_list/{cafeName}")
+    public String deailsForm(@PathVariable String cafeName, Model model){
+        CafeMember cafeMember = cafeMemberServiceInterface.findByCafeName(cafeName).get();
+        model.addAttribute("cafes",cafeMember);
+        return "cafe/details";
     }
 
 }
