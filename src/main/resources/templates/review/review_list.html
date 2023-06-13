@@ -178,7 +178,7 @@
 <!--        </ul>-->
 <!--      </ul>-->
 <!--    </div>-->
-<div th:insert="~{/main/header_login.html}"></div>
+<!--<div th:insert="~{/main/header_login.html}"></div>-->
       <section>
         <form action="review_list.html" th:action th:object="${review}" method="post">
         <h2>리뷰 전체 페이지</h2>
@@ -189,30 +189,20 @@
                     >리뷰 등록</button>
           </div><hr>
         </div><br>
-
-
+          <table>
           <div class="review">
             <div class="profile">
             </div>
-
-            <input type="text" id="reviewTitle" th:field="*{reviewTitle}">
-            <span>후기 제목</span>
-            <p>
+            <span type="text" id="reviewTitle" th:field="*{reviewTitle}">후기 제목</span>
+            <p type="text" id="reviewContents" th:field="*{reviewContent}">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quasi,
               perferendis voluptatum ut rerum quas facilis et. Harum ipsum officia
               natus porro hic corporis, nihil est ipsam amet neque nostrum.
             </p>
-
-          <div class="review">
-            <div class="profile">
-            </div>
-            <span>후기 제목</span>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quasi,
-              perferendis voluptatum ut rerum quas facilis et.
-              aperiam ipsam.
-            </p>
           </div>
+          </table>
+
+
           <div class="review">
             <div class="profile">
 
@@ -243,20 +233,16 @@
               perferendis voluptatum ut rerum quas facilis et.
             </p>
 
-            </table>
           </div>
-
-
-
       </section>
 
-      <div class="footer">
-      <footer style="background-color: #DCDCDC">
-        <p>인천시 부평구 더 조은(주)카페 플레이스</p>
-        <p>사업자등록번호 : 215-86-93600·통신판매업신고 : 2009-서울송파-0069호·부가통신사업신고필증 : 021129</p>
-        <p>webmaster@iloom.com·Copyright (c) 2018  lnc. All rights reserved</p>
-      </footer>
-    </div>
+<!--      <div class="footer">-->
+<!--      <footer style="background-color: #DCDCDC">-->
+<!--        <p>인천시 부평구 더 조은(주)카페 플레이스</p>-->
+<!--        <p>사업자등록번호 : 215-86-93600·통신판매업신고 : 2009-서울송파-0069호·부가통신사업신고필증 : 021129</p>-->
+<!--        <p>webmaster@iloom.com·Copyright (c) 2018  lnc. All rights reserved</p>-->
+<!--      </footer>-->
+<!--    </div>-->
     </div>
 </body>
 </html>

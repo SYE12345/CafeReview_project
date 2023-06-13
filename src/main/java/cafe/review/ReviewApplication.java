@@ -5,6 +5,7 @@ import cafe.review.config.MybatisConfig;
 import cafe.review.repository.cafe.CafeRepository;
 import cafe.review.service.MemberServiceInterface;
 import cafe.review.service.cafe.CafeMemberServiceInterface;
+import cafe.review.service.review.ReviewServiceInterface;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -30,5 +31,12 @@ public class ReviewApplication {
 	@Profile("local")
 	public TestCafeDataInit testCafeDataInit(CafeMemberServiceInterface cafeRepository){
 		return new TestCafeDataInit(cafeRepository);
+	}
+
+	@Bean
+
+	@Profile("local")
+	public  TestReviewDataInit testReviewDataInit(ReviewServiceInterface reviewServiceInterface){
+		return new TestReviewDataInit(reviewServiceInterface);
 	}
 }

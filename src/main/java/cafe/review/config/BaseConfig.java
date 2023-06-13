@@ -4,12 +4,16 @@ import cafe.review.repository.MemberInterface;
 import cafe.review.repository.MemberRepository;
 import cafe.review.repository.cafe.CafeInterface;
 import cafe.review.repository.cafe.CafeRepository;
+import cafe.review.repository.review.ReviewInterface;
+import cafe.review.repository.review.ReviewRepository;
 import cafe.review.service.LoginInterface;
 import cafe.review.service.LoginService;
 import cafe.review.service.MemberService;
 import cafe.review.service.MemberServiceInterface;
 import cafe.review.service.cafe.CafeMemberService;
 import cafe.review.service.cafe.CafeMemberServiceInterface;
+import cafe.review.service.review.ReviewService;
+import cafe.review.service.review.ReviewServiceInterface;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -36,6 +40,16 @@ public class BaseConfig {
     @Bean
     public CafeInterface cafeInterface(){
         return new CafeRepository();
+    }
+
+    @Bean
+    public ReviewServiceInterface reviewServiceInterface(){
+        return new ReviewService(reviewInterface());
+    }
+
+    @Bean
+    public ReviewInterface reviewInterface(){
+        return new ReviewRepository();
     }
 
 
