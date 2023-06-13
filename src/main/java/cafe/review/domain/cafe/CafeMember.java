@@ -12,8 +12,7 @@ public class CafeMember {
     private String menu1;
     private String menu2;
     private String menu3;
-    public CafeMember(Long cafeId, String cafeName, String address, String number, String menu1, String menu2, String menu3) {
-        this.cafeId = cafeId;
+    public CafeMember(String cafeName, String address, String number, String menu1, String menu2, String menu3) {
         this.cafeName = cafeName;
         this.address = address;
         this.number = number;
