@@ -19,4 +19,6 @@ public class ReviewController {
         model.addAttribute("review", new Review());
         return "review/review_list";
     }
+
+
 }
