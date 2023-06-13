@@ -184,7 +184,8 @@
         <h2>카페 리스트</h2>
         <article th:each="cafe : ${cafes}" th:onclick="|location.href='@{All_list/{cafeName}(cafeName=${cafe.cafeName})}'|">
 <!--        <article th:each="cafe : ${cafes}" th:href="@{All_list/{cafeName}(cafeName=${cafe.cafeName})}">-->
-          <img src="images/Personal/dozenmatter/더즌매터1.jpg">
+          <img src="images/Personal/dozenmatter/더즌매터1.jpg"
+          th:src="|images/${cafe.cafeType}/${cafe.cafeName}/1.jpg|">
           <h1 th:text="|${cafe.cafeId}. ${cafe.cafeName}|">1. 더즌매터</h1>
           <h3 th:text="|주소: ${cafe.address}|">주소: 인천 부평구 부평대로38번길 28</h3>
           <h3 th:text="|전화번호: ${cafe.cafeNumber}|">전화번호: 070-8860-4926</h3>
@@ -216,7 +217,7 @@
       </section>
 <!--      <aside>-->
 <!--        <img src="images/Personal/dozenmatter/더즌매터map.jpg" width="430" height="220">-->
-<!--        <img src="images/Personal/dozenmatter/더즌매터1.jpg" width="430" height="220">-->
+<!--        <img src="images/Personal/dozenmatter/1.jpg" width="430" height="220">-->
 <!--        <img src="images/Personal/dozenmatter/더즌매터2.jpg" width="430" height="220">-->
 <!--        <img src="images/Personal/dozenmatter/더즌매터2.jpg" width="430" height="220">-->
 <!--      </aside>-->
