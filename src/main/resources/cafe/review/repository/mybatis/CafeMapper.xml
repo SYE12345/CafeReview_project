@@ -3,4 +3,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cafe.review.repository.mybatis.CafeMemberMapper">
 
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        <selectKey keyProperty="id" resultType="java.lang.long" order="BEFORE">
+            SELECT cafe_member_seq.NEXTVAL FROM DUAL
+        </selectKey>
+            insert into cafe_member(cafe_id, cafe_name, address, number, menu1,menu2,menu3,type)
+            values (#{cafe_id}, #{cafe_name}, #{address}, #{number}, #{menu1},#{menu2},#{menu3},#{type})
+    </insert>
+
+    <select id="findAll" resultType="cafe_member">
+        select *
+        from cafe_member
+    </select>
 </mapper>
