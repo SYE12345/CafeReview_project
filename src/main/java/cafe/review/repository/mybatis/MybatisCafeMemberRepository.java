@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -24,4 +25,8 @@ public class MybatisCafeMemberRepository implements CafeInterface {
         return cafeMemberMapper.findAll();
     }
 
+    @Override
+    public Optional<CafeMember> findByCafeName(String cafeName) {
+        return cafeMemberMapper.findByCafeName(cafeName);
+    }
 }

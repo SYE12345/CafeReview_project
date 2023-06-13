@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,5 +21,10 @@ public class CafeMemberService implements CafeMemberServiceInterface {
     @Override
     public List<CafeMember> findAll(){
         return cafeInterface.findAll();
+    }
+
+    @Override
+    public Optional<CafeMember> findByCafeName(String cafeName) {
+        return cafeInterface.findByCafeName(cafeName);
     }
 }

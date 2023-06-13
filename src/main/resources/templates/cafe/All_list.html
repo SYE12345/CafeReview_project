@@ -182,7 +182,8 @@
 
       <section>
         <h2>카페 리스트</h2>
-        <article th:each="cafe : ${cafes}">
+        <article th:each="cafe : ${cafes}" th:onclick="|location.href='@{All_list/{cafeName}(cafeName=${cafe.cafeName})}'|">
+<!--        <article th:each="cafe : ${cafes}" th:href="@{All_list/{cafeName}(cafeName=${cafe.cafeName})}">-->
           <img src="images/Personal/dozenmatter/더즌매터1.jpg">
           <h1 th:text="|${cafe.cafeId}. ${cafe.cafeName}|">1. 더즌매터</h1>
           <h3 th:text="|주소: ${cafe.address}|">주소: 인천 부평구 부평대로38번길 28</h3>
