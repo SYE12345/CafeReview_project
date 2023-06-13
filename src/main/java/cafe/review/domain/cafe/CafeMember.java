@@ -12,6 +12,9 @@ public class CafeMember {
     private String menu2;
     private String menu3;
     private String type;   //종류
+
+    public CafeMember(){
+    }
     public CafeMember(String cafeName, String address, String number, String menu1, String menu2, String menu3, String type) {
         this.cafeName = cafeName;
         this.address = address;
@@ -21,5 +24,4 @@ public class CafeMember {
         this.menu3 = menu3;
         this.type = type;
     }
-
 }

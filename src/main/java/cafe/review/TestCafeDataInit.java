@@ -2,6 +2,7 @@ package cafe.review;
 
 import cafe.review.domain.cafe.CafeMember;
 import cafe.review.repository.cafe.CafeRepository;
+import cafe.review.service.cafe.CafeMemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -11,7 +12,7 @@ import org.springframework.context.event.EventListener;
 @Slf4j
 public class TestCafeDataInit {
 
-    private final CafeRepository cafeRepository;
+    private final CafeMemberServiceInterface cafeRepository;
 
     @EventListener(ApplicationReadyEvent.class)
     public void initCafeData(){

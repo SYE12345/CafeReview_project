@@ -19,8 +19,8 @@ public class CafeController {
 
     @GetMapping("All_list")
     public String All_list(Model model){
-        cafeMemberServiceInterface.findAll();
-        model.addAttribute("cafe",new Object());
+        List<CafeMember> cafeMembers = cafeMemberServiceInterface.findAll();
+        model.addAttribute("cafes", cafeMembers);
         return "cafe/All_list";
     }
 
