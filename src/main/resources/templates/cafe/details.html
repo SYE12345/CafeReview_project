@@ -64,7 +64,7 @@
 <div class="wrapper">
 <div style="margin:100px 200px 200px 0px;">
 <div class="product_view"><!--레이아웃 나누기-->
-<h2>더즌매터</h2>
+<h2 th:text="${cafes.cafeName}">더즌매터</h2>
   <section>
   <table th:each="cafe : ${cafes}">
    <colgroup><!-- 표의 열을묶는 그룹을 정의한다 <colgroup>은 모든 <thead>, <th>, <tbody>, <tfoot>, <tr> 요소 앞에 위치해야 하며, \
@@ -91,7 +91,7 @@
    </tr>
    <tr>
      <th>전화 번호</th>
-     <td th:text="${cafe.number}">
+     <td th:text="${cafe.cafeNumber}">
          070-8860-4926
      </td>
    </tr>
