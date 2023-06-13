@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 
-@Import(BaseConfig.class)
+@Import(MybatisConfig.class)
 @SpringBootApplication(scanBasePackages = "cafe.review.web")
 public class ReviewApplication {
 
