@@ -42,6 +42,6 @@ public class MybatisConfig {
     }
     @Bean
     public CafeInterface cafeInterface(){
-        return new CafeRepository();
+        return new MybatisCafeMemberRepository(cafeMemberMapper);
     }
 }
