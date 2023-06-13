@@ -7,7 +7,7 @@ import java.util.List;
 @Mapper
 public interface ReviewMemberMapper {
 
-    Review save(Review review);
+    void save(Review review);
 
     List<Review> findAll();
 }

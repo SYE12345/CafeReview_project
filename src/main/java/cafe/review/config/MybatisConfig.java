@@ -50,8 +50,9 @@ public class MybatisConfig {
     public ReviewServiceInterface reviewServiceInterface(){
         return new ReviewService(reviewInterface());
     }
+
     @Bean
     public ReviewInterface reviewInterface(){
-        return new MybatisMemberRepository(reviewMemberMapper);
+        return new MybatisReviewMemberRepository(reviewMemberMapper);
     }
 }
