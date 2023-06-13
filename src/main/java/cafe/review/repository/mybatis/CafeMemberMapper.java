@@ -1,6 +1,6 @@
 package cafe.review.repository.mybatis;
 
-import cafe.review.domain.cafe.CafeMember;
+import cafe.review.domain.CafeMember;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

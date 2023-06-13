@@ -1,7 +1,6 @@
 package cafe.review;
 
-import cafe.review.domain.cafe.CafeMember;
-import cafe.review.repository.cafe.CafeRepository;
+import cafe.review.domain.CafeMember;
 import cafe.review.service.cafe.CafeMemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

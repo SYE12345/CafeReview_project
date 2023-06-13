@@ -41,9 +41,9 @@
     </style>
 <body>
 <!-- 상단바 로그인 회원가입 기타 등등 시작-->
-
+<form action="review.html" th:action th:object="${review}" method="post">
 <section class="login">
-    <form action="review.html" th:action th:object="${}" method="post">
+
     <link href="/css/css.css"
           th:href="@{/css/css.css}" rel="stylesheet"/>
     <h2 style="font-size: 3em">리뷰 쓰기</h2>

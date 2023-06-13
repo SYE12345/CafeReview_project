@@ -157,30 +157,30 @@
     </style>
 </head>
 <body>
-    <div id="wrapper">
-      <div class="navbar">
-      <a href="#" id="logo">
-        <img src="images/logo.png." width="100" height="50">
-      </a>
-      <ul>
-        <ul id="menu">
-          <li class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
-          </li>
-          <li><a href="login.html">로그인</a></li>
-          <li><a href="join.html">회원가입</a></li>
-          <li><a href="#">카페 리스트</a></li>
-        </ul>
-      </ul>
-    </div>
-
-
+<!--    <div id="wrapper">-->
+<!--      <div class="navbar">-->
+<!--      <a href="#" id="logo">-->
+<!--        <img src="images/logo.png." width="100" height="50">-->
+<!--      </a>-->
+<!--      <ul>-->
+<!--        <ul id="menu">-->
+<!--          <li class="navbar bg-body-tertiary">-->
+<!--            <div class="container-fluid">-->
+<!--              <form class="d-flex" role="search">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li><a href="login.html">로그인</a></li>-->
+<!--          <li><a href="join.html">회원가입</a></li>-->
+<!--          <li><a href="#">카페 리스트</a></li>-->
+<!--        </ul>-->
+<!--      </ul>-->
+<!--    </div>-->
+<div th:insert="~{/main/header_login.html}"></div>
       <section>
+        <form action="review_list.html" th:action th:object="${review}" method="post">
         <h2>리뷰 전체 페이지</h2>
         <div class="row">
           <div class="col">
@@ -195,6 +195,7 @@
             <div class="profile">
             </div>
 
+            <input type="text" id="reviewTitle" th:field="*{reviewTitle}">
             <span>후기 제목</span>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quasi,

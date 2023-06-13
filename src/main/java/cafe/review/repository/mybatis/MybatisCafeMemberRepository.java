@@ -1,8 +1,7 @@
 package cafe.review.repository.mybatis;
 
-import cafe.review.domain.cafe.CafeMember;
+import cafe.review.domain.CafeMember;
 import cafe.review.repository.cafe.CafeInterface;
-import cafe.review.service.cafe.CafeMemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
