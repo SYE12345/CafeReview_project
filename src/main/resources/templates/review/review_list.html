@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>카페 리뷰 전체 페이지</title>
   <link rel="stylesheet" href="css/mainstyle.css">
-  <link th:href="@{/css/bootstrap.min.css}"
-        href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
   <style>
       #wrapper {
         width: 2000px;
@@ -14,21 +13,6 @@
       h2 {
         text-align: center;
       }
-
-      /*header {*/
-      /*  width: 100%;*/
-      /*  height: 150px;*/
-      /*  background-color: #F46075;*/
-      /*  background-image: url("images/nav2.png");*/
-      /*  background-repeat: no-repeat;*/
-      /*  background-position: right center;*/
-      /*}*/
-      /*header nav {*/
-      /*  float: left;*/
-      /*  width: 70%;*/
-      /*  margin-top: 50px;*/
-      /*}*/
-
       /* navbar */
       .navbar{
         height: 60px;
@@ -61,19 +45,7 @@
         font-size: 13px;
         font-weight: bold;
       }
-      /*nav ul {*/
-      /*  list-style: none;*/
-      /*}*/
-      /*nav ul li {*/
-      /*  display: inline;*/
-      /*  float: left;*/
-      /*  font-weight: bold;*/
-      /*  margin: 15px;*/
-      /*}*/
-      /*nav ul li a {*/
-      /*  color: white;*/
-      /*  text-decoration: none;*/
-      /*}*/
+
       footer p {
         padding: 20px;
       }
@@ -135,57 +107,19 @@
         color: white;
         text-align: center;
       }
-      /*.at1, .at2, .at3, .at4 {*/
-      /*  transition:2s;*/
-      /*}*/
-      /*.at1:hover {*/
-      /*  background-color: #cf9;*/
-      /*  border: 1px solid green;*/
-      /*}*/
-      /*.at2:hover {*/
-      /*  background-color: #a2d0ff;*/
-      /*  border: 1px solid blue;*/
-      /*}*/
-      /*.at3:hover {*/
-      /*  background-color: #ebcbfe;*/
-      /*  border: 1px solid purple;*/
-      /*}*/
-      /*.at4:hover {*/
-      /*  background-color: #fc3;*/
-      /*  border: 1px solid red;*/
-      /*}*/
+
     </style>
 </head>
 <body>
-<!--    <div id="wrapper">-->
-<!--      <div class="navbar">-->
-<!--      <a href="#" id="logo">-->
-<!--        <img src="images/logo.png." width="100" height="50">-->
-<!--      </a>-->
-<!--      <ul>-->
-<!--        <ul id="menu">-->
-<!--          <li class="navbar bg-body-tertiary">-->
-<!--            <div class="container-fluid">-->
-<!--              <form class="d-flex" role="search">-->
-<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
-<!--              </form>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li><a href="login.html">로그인</a></li>-->
-<!--          <li><a href="join.html">회원가입</a></li>-->
-<!--          <li><a href="#">카페 리스트</a></li>-->
-<!--        </ul>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--<div th:insert="~{/main/header_login.html}"></div>-->
+<div id="wrapper">
+  <div th:insert="~{/main/header.html}"></div>
       <section>
         <form action="review_list.html" th:action th:object="${review}" method="post">
         <h2>리뷰 전체 페이지</h2>
         <div class="row">
           <div class="col">
             <button class="btn btn-primary float-end"
-                    onclick="location.href='review.html'"
+                    th:onclick="|location.href='@{/review/review.html}'|"
                     >리뷰 등록</button>
           </div><hr>
         </div><br>
@@ -193,56 +127,17 @@
           <div class="review">
             <div class="profile">
             </div>
-            <span type="text" id="reviewTitle" th:field="*{reviewTitle}">후기 제목</span>
-            <p type="text" id="reviewContents" th:field="*{reviewContent}">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quasi,
-              perferendis voluptatum ut rerum quas facilis et. Harum ipsum officia
-              natus porro hic corporis, nihil est ipsam amet neque nostrum.
-            </p>
+<!--            <p th:text="|회원 ID : ${review.reviewId}|">회원 ID</p>-->
+            <span th:text="|후기 제목 : ${review.reviewTitle}|">후기 제목</span>
+            <p th:text="|후기 내용 : ${review.reviewContent}|">
+             후기내용
+            </p><br>
           </div>
           </table>
-
-
-          <div class="review">
-            <div class="profile">
-
-            </div>
-            <span>후기 제목</span>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quasi,
-              perferendis voluptatum ut rerum quas facilis et.
-            </p>
-          </div>
-          <div class="review">
-            <div class="profile">
-
-            </div>
-            <span>후기 제목</span>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quasi,
-              perferendis voluptatum ut rerum quas facilis et.
-            </p>
-          </div>
-          <div class="review">
-            <div class="profile">
-
-            </div>
-            <span>후기 제목</span>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quasi,
-              perferendis voluptatum ut rerum quas facilis et.
-            </p>
-
-          </div>
+        </form>
       </section>
 
-<!--      <div class="footer">-->
-<!--      <footer style="background-color: #DCDCDC">-->
-<!--        <p>인천시 부평구 더 조은(주)카페 플레이스</p>-->
-<!--        <p>사업자등록번호 : 215-86-93600·통신판매업신고 : 2009-서울송파-0069호·부가통신사업신고필증 : 021129</p>-->
-<!--        <p>webmaster@iloom.com·Copyright (c) 2018  lnc. All rights reserved</p>-->
-<!--      </footer>-->
-<!--    </div>-->
+  <div th:insert="~{/main/footer.html}"></div>
     </div>
 </body>
 </html>

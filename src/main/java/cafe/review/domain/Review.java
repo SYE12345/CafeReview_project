@@ -12,7 +12,7 @@ public class Review {
 
     }
 
-    public Review(String reviewTitle, String reviewContent) {
+    public Review( String reviewTitle, String reviewContent) {
         this.reviewTitle = reviewTitle;
         this.reviewContent = reviewContent;
     }

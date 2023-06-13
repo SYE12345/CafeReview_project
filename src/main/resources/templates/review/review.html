@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>리뷰 페이지</title>
-    <link rel="stylesheet" href="css/review.css">
+    <link rel="stylesheet" href="css/review.css"
+          th:href="@{/css/review.css}">
 
     <style>
 
-         section{
-             padding: 100px;
-         }
+        section{
+            padding: 100px;
+        }
         ul li{
             list-style: none;
         }
@@ -42,44 +43,40 @@
 <body>
 <!-- 상단바 로그인 회원가입 기타 등등 시작-->
 <form action="review.html" th:action th:object="${review}" method="post">
-<section class="login">
+    <section class="login">
+<!--        <link href="/css/css.css"-->
+<!--              th:href="@{/css/css.css}" rel="stylesheet"/>-->
+        <h2 style="font-size: 3em">리뷰 쓰기</h2>
+        <form class="mb-3" name="myform" id="myform" method="post">
+            <ul>
+                <li><h3>별점 평가</h3>
+                    <fieldset>
+                        <input type="radio" name="reviewStar" value="5" id="rate1"><label
+                            for="rate1">★</label>
+                        <input type="radio" name="reviewStar" value="4" id="rate2"><label
+                            for="rate2">★</label>
+                        <input type="radio" name="reviewStar" value="3" id="rate3"><label
+                            for="rate3">★</label>
+                        <input type="radio" name="reviewStar" value="2" id="rate4"><label
+                            for="rate4">★</label>
+                        <input type="radio" name="reviewStar" value="1" id="rate5"><label
+                            for="rate5">★</label>
+                    </fieldset>
+                </li>
+                <li>
+                    <br><br>
+                    <h3>리뷰 작성</h3><br>
+                    <textarea class="col-auto form-control" type="text" th:field="*{review.reviewContents}" placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다."></textarea>
+                </li>
+            </ul>
+            <br>
+            <button th:onclick="|location.href='@{/review/review_list.html}'|">완료</button>
+            <br><br>
 
-    <link href="/css/css.css"
-          th:href="@{/css/css.css}" rel="stylesheet"/>
-    <h2 style="font-size: 3em">리뷰 쓰기</h2>
+        </form>
+    </section>
 
-
-    <form class="mb-3" name="myform" id="myform" method="post">
-        <ul>
-            <li><h3>별점 평가</h3>
-                <fieldset>
-                    <input type="radio" name="reviewStar" value="5" id="rate1"><label
-                        for="rate1">★</label>
-                    <input type="radio" name="reviewStar" value="4" id="rate2"><label
-                        for="rate2">★</label>
-                    <input type="radio" name="reviewStar" value="3" id="rate3"><label
-                        for="rate3">★</label>
-                    <input type="radio" name="reviewStar" value="2" id="rate4"><label
-                        for="rate4">★</label>
-                    <input type="radio" name="reviewStar" value="1" id="rate5"><label
-                        for="rate5">★</label>
-                </fieldset>
-            </li>
-            <li>
-                <br><br>
-                <h3>리뷰 작성</h3><br>
-                <textarea class="col-auto form-control" type="text" id="reviewContents"
-                          placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다."></textarea>
-            </li>
-        </ul>
-        <br>
-        <a href="#"> <li><button>완료</button></li> </a>
-        <br><br>
-
-    </form>
-</section>
-
-<br><br>
+    <br><br>
 
 </form>
 
