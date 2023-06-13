@@ -34,7 +34,7 @@ public interface MemberMapper {
     Optional<Member> findPasswordNamePhone(String loginId, String name, String email);
 
     // 회원 정보 수정용(MemberUpdateDto 클래스 사용)
-    void update(@Param("id") Long id, @Param("memberUpdateParam") MemberUpdateDto memberUpdateParam);
+    void update(@Param("loginId") String loginId, @Param("memberUpdateParam") MemberUpdateDto memberUpdateParam);
 
 
 }

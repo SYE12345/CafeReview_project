@@ -31,7 +31,7 @@ public interface MemberInterface {
     Optional<Member> findPasswordNamePhone(String loginId, String name, String email);
 
     // 회원 정보 수정용(MemberUpdateDto 클래스 사용)
-    void update(Long id, MemberUpdateDto memberUpdateParam);
+    void update(String loginId, MemberUpdateDto memberUpdateParam);
 
 
 

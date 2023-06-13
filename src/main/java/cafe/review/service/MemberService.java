@@ -55,7 +55,7 @@ public class MemberService implements MemberServiceInterface{
     }
 
     @Override
-    public void update(Long id, MemberUpdateDto memberUpdateParam) {
-        memberInterface.update(id, memberUpdateParam);
+    public void update(String loginId, MemberUpdateDto memberUpdateParam) {
+        memberInterface.update(loginId, memberUpdateParam);
     }
 }

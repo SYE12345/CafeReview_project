@@ -16,7 +16,7 @@ import java.util.List;
 public class CafeController {
     private final CafeRepository cafeRepository;
 
-    @GetMapping("/All_list")
+    @GetMapping("All_list")
     public String All_list(Model model){
         List<CafeMember> cafeMembers = CafeRepository.findAll();
         model.addAttribute("cafes",cafeMembers);

@@ -18,7 +18,7 @@
             password2=#{updateParam.password},
             email=#{updateParam.email},
             phone_number=#{updateParam.phoneNumber}
-        where id = #{id}
+        where login_id = #{loginId}
     </update>
 
 <!-- resultType: 조회의 결과를 받을 타입을 명시

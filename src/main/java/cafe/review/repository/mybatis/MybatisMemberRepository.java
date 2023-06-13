@@ -55,8 +55,8 @@ public class MybatisMemberRepository implements MemberInterface {
     }
 
     @Override
-    public void update(Long id, MemberUpdateDto UpdateParam) {
-        memberMapper.update(id, UpdateParam);
+    public void update(String loginId, MemberUpdateDto UpdateParam) {
+        memberMapper.update(loginId, UpdateParam);
 
     }
 }

@@ -72,8 +72,8 @@ public class MemberRepository implements MemberInterface {
     }
 
     @Override
-    public void update(Long loginId, MemberUpdateDto memberUpdateParam) {
-        Member findMember = findById(loginId).orElseThrow();
+    public void update(String loginId, MemberUpdateDto memberUpdateParam) {
+        Member findMember = findByLoginId(loginId).orElseThrow();
         findMember.setPassword(memberUpdateParam.getPassword());
         findMember.setEmail(memberUpdateParam.getEmail());
         findMember.setPhoneNumber(memberUpdateParam.getPhoneNumber());
