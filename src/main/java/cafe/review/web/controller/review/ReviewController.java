@@ -38,8 +38,6 @@ public class ReviewController {
         redirectAttributes.addAttribute("reviewTitle", savedReview.getReviewTitle());
         redirectAttributes.addAttribute("reviewContent", savedReview.getReviewContent());
         return "redirect:/review_list";
-
-
     }
 
 

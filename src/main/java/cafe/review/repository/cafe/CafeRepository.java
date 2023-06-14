@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Repository
@@ -29,5 +30,15 @@ public class CafeRepository implements CafeInterface {
     public Optional<CafeMember> findByCafeName(String cafeName) {
         return findAll().stream()
                 .filter(m->m.getCafeName().equals(cafeName)).findFirst();
+    }
+
+    @Override
+    public List<CafeMember> findByFran(String cafeType) {
+       return findAll().stream().filter(m->m.getCafeType().equals("프랜차이즈")).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CafeMember> findByGam(String cafeType) {
+        return findAll().stream().filter(m->m.getCafeType().equals("감성카페")).collect(Collectors.toList());
     }
 }

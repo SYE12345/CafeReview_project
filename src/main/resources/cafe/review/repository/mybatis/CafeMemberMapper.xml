@@ -22,4 +22,17 @@
         where cafe_name=#{cafeName}
     </select>
 
+    <select id="findyByFran" resultType="cafemember">
+        select *
+        from cafe_member
+        where cafe_type = '프랜차이즈'
+    </select>
+
+    <select id="findyByGam" resultType="cafemember">
+        select *
+        from cafe_member
+        where cafe_type = '감성카페'
+    </select>
+
+
 </mapper>

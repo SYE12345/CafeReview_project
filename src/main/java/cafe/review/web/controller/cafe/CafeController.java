@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -32,4 +34,18 @@ public class CafeController {
         return "cafe/details";
     }
 
+    @GetMapping("/")
+    public String findByFran(String cafeType, Model model){
+        List<CafeMember> cafetypes = cafeMemberServiceInterface.findByFran(cafeType);
+        model.addAttribute("cafes", cafetypes);
+        return "/";
+    }
+
+    @GetMapping("/")
+    public String findByGam(String cafeType, Model model){
+        List<CafeMember> cafetypes2 = cafeMemberServiceInterface.findByGam(cafeType);
+        model.addAttribute("cafes", cafetypes2);
+        return "/";
+    }
 }
+

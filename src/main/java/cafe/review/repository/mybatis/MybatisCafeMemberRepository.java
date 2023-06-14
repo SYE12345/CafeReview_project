@@ -28,4 +28,14 @@ public class MybatisCafeMemberRepository implements CafeInterface {
     public Optional<CafeMember> findByCafeName(String cafeName) {
         return cafeMemberMapper.findByCafeName(cafeName);
     }
+
+    @Override
+    public List<CafeMember> findByFran(String cafeType) {
+        return cafeMemberMapper.findByFran(cafeType);
+    }
+
+    @Override
+    public List<CafeMember> findByGam(String cafeType) {
+        return cafeMemberMapper.findByGam(cafeType);
+    }
 }

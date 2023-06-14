@@ -27,4 +27,14 @@ public class CafeMemberService implements CafeMemberServiceInterface {
     public Optional<CafeMember> findByCafeName(String cafeName) {
         return cafeInterface.findByCafeName(cafeName);
     }
+
+    @Override
+    public List<CafeMember> findByFran(String cafeType) {
+        return cafeInterface.findByFran(cafeType);
+    }
+
+    @Override
+    public List<CafeMember> findByGam(String cafeType) {
+        return cafeInterface.findByGam(cafeType);
+    }
 }
