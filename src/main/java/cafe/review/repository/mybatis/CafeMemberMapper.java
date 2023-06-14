@@ -12,7 +12,7 @@ public interface CafeMemberMapper {
     List<CafeMember> findAll();
     Optional<CafeMember> findByCafeName(String cafeName);
 
-    List<CafeMember> findByFran(String cafeType);
+    List<CafeMember> findByFran();
 
-    List<CafeMember> findByGam(String cafeType);
+    List<CafeMember> findByGam();
 }

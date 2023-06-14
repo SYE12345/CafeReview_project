@@ -30,12 +30,12 @@ public class MybatisCafeMemberRepository implements CafeInterface {
     }
 
     @Override
-    public List<CafeMember> findByFran(String cafeType) {
-        return cafeMemberMapper.findByFran(cafeType);
+    public List<CafeMember> findByFran() {
+        return cafeMemberMapper.findByFran();
     }
 
     @Override
-    public List<CafeMember> findByGam(String cafeType) {
-        return cafeMemberMapper.findByGam(cafeType);
+    public List<CafeMember> findByGam() {
+        return cafeMemberMapper.findByGam();
     }
 }

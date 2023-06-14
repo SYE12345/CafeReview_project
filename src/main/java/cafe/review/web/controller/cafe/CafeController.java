@@ -38,14 +38,14 @@ public class CafeController {
     public String findByFran(Model model){
         List<CafeMember> cafetypes = cafeMemberServiceInterface.findByFran();
         model.addAttribute("cafes", cafetypes);
-        return "/";
+        return "cafe/All_list";
     }
 
-    @GetMapping("/FindByGam")
+    @GetMapping("/findByGam")
     public String findByGam(Model model){
         List<CafeMember> cafetypes2 = cafeMemberServiceInterface.findByGam();
         model.addAttribute("cafes", cafetypes2);
-        return "/";
+        return "cafe/All_list";
     }
 }
 
