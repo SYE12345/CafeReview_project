@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 public class ReviewController {
@@ -16,13 +18,11 @@ public class ReviewController {
 
     @GetMapping("/review_list")
     public String reviewlistForm(Model model){
+        List<Review> review = reviewServiceInterface.findAll();
         model.addAttribute("review", new Review());
         return "review/review_list";
     }
 
-    @GetMapping("/review")
-    public String reviewForm(Model model){
-        model.addAttribute("review", new Review());
-        return "review/review";
-    }
+
+
 }
