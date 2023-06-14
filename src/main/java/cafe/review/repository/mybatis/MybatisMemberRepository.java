@@ -17,7 +17,8 @@ public class MybatisMemberRepository implements MemberInterface {
     public Member save(Member member) {
 //        memberMapper.save(member);
 //        return member;
-        validateDuplicateMember(member);
+        if(validateDuplicateMember(member))
+            return null;
         memberMapper.save(member);
         return member;
     }
@@ -64,10 +65,8 @@ public class MybatisMemberRepository implements MemberInterface {
     }
 
     //중복 id check
-    private void validateDuplicateMember(Member member) {
+    private boolean validateDuplicateMember(Member member) {
         Optional<Member> result = memberMapper.findByLoginId(member.getLoginId());
-        result.ifPresent(m -> {
-            throw new IllegalStateException("이미 존재하는 아이디입니다.");
-        });
+        return result.isPresent();
     }
 }
