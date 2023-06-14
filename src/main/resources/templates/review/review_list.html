@@ -73,11 +73,11 @@
       }
       section article h1 {
         margin: 10px;
-        margin-left: 260px;
+        margin-left: 30px;
       }
       section article h3 {
         margin: 10px;
-        margin-left: 290px;
+        margin-left: 70px;
       }
       section article h5 {
         margin: 5px;
@@ -119,21 +119,27 @@
         <div class="row">
           <div class="col">
             <button class="btn btn-primary float-end"
-                    th:onclick="|location.href='@{/review/review.html}'|"
-                    >리뷰 등록</button>
+                    th:onclick="|location.href='@{/review}'|" type="button">
+                리뷰 등록</button>
           </div><hr>
         </div><br>
-          <table>
-          <div class="review">
-            <div class="profile">
-            </div>
-<!--            <p th:text="|회원 ID : ${review.reviewId}|">회원 ID</p>-->
-            <span th:text="|후기 제목 : ${review.reviewTitle}|">후기 제목</span>
-            <p th:text="|후기 내용 : ${review.reviewContent}|">
-             후기내용
-            </p><br>
-          </div>
-          </table>
+            <article th:each="review : ${reviews}">
+                <!--        <article th:each="cafe : ${cafes}" th:href="@{All_list/{cafeName}(cafeName=${cafe.cafeName})}">-->
+                <h1 th:text="|리뷰제목 : ${review.reviewTitle}|">리뷰 제목</h1>
+                <h3 th:text="|리뷰 내용: ${review.reviewContent}|">주소: 인천 부평구 부평대로38번길 28</h3>
+
+            </article>
+<!--          <table>-->
+<!--          <div class="review">-->
+<!--            <div class="profile">-->
+<!--            </div>-->
+<!--&lt;!&ndash;            <p th:text="|회원 ID : ${review.reviewId}|">회원 ID</p>&ndash;&gt;-->
+<!--            <span th:text="|후기 제목 : ${review.reviewTitle}|">후기 제목</span>-->
+<!--            <p th:text="|후기 내용 : ${review.reviewContent}|">-->
+<!--             후기내용-->
+<!--            </p><br>-->
+<!--          </div>-->
+<!--          </table>-->
         </form>
       </section>
 

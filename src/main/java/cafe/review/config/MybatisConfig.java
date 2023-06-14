@@ -49,7 +49,7 @@ public class MybatisConfig {
         return new MybatisCafeMemberRepository(cafeMemberMapper);
     }
 
-    // 카페 관련
+    // 카페 관련 끝
 
     @Bean
     public ReviewServiceInterface reviewServiceInterface(){
@@ -60,4 +60,6 @@ public class MybatisConfig {
     public ReviewInterface reviewInterface(){
         return new MybatisReviewMemberRepository(reviewMemberMapper);
     }
+
+    // 리뷰관련 끝
 }
