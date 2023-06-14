@@ -36,6 +36,10 @@ public class MemberController {
                        Member member, BindingResult bindingResult, RedirectAttributes redirectAttributes){
 
         Member savedMember = memberServiceInterface.save(member);
+        if (savedMember == null) {
+            bindingResult.rejectValue("loginId", "duplicate.loginId",
+                    "해당 아이디가 이미 사용중입니다.");
+        }
         if(bindingResult.hasErrors()){
             return "member/join";
         }

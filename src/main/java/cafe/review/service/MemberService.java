@@ -62,15 +62,14 @@ public class MemberService implements MemberServiceInterface{
 
     //중복 id check
     public String join(Member member){
-        validateDuplicateMember(member);
+        if(validateDuplicateMember(member))
+            return null;
         memberInterface.save(member);
         return member.getLoginId();
     }
 
-    private void validateDuplicateMember(Member member){
+    private boolean validateDuplicateMember(Member member){
         Optional<Member> result = memberInterface.findByLoginId(member.getLoginId());
-        result.ifPresent(m->{
-            throw new IllegalStateException("이미 존재하는 아이디입니다.");
-        });
+        return result.isPresent();
     }
 }

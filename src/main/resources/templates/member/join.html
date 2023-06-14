@@ -7,7 +7,11 @@
         th:href="@{/css/mainstyle.css}">
   <link rel="stylesheet" href="css/join.css"
   th:href="@{/css/join.css}">
-
+<style>
+    .alertTxt{
+        color: red;
+    }
+</style>
 </head>
 
 <body>
@@ -31,10 +35,10 @@
       </h3>
       <span class="box int_id">
                         <input type="text" id="loginId" class="int" maxlength="20" th:field="*{loginId}">
-                        <span class="alertTxt" th:errors= "*{loginId}"> 아이디 중복</span>
                     </span>
 <!--      <div class="error_next_box"></div>-->
     </div>
+      <span class="alertTxt" th:errors= "*{loginId}"> 아이디 중복</span>
     <!-- PW1 -->
     <div>
       <h3 class="join_title"><label for="password">비밀번호</label></h3>
