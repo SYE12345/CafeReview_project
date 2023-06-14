@@ -40,7 +40,7 @@ public class MemberController {
         Member savedMember = memberServiceInterface.save(member);
         redirectAttributes.addAttribute("loginId",savedMember.getLoginId());
         redirectAttributes.addAttribute("status",true);
-        return "redirect:/member/join/{loginId}";
+        return "redirect:/";
     }
 
     @GetMapping("/{loginId}/myInfo")
