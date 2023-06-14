@@ -41,6 +41,7 @@ public class LoginController {
             return "login/login";
         }
 
+
         HttpSession session = request.getSession();
 
         session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
