@@ -34,10 +34,11 @@ public class MemberController {
     @PostMapping("/join")
     public String join(@Validated @ModelAttribute
                        Member member, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+
+        Member savedMember = memberServiceInterface.save(member);
         if(bindingResult.hasErrors()){
             return "member/join";
         }
-        Member savedMember = memberServiceInterface.save(member);
         redirectAttributes.addAttribute("loginId",savedMember.getLoginId());
         redirectAttributes.addAttribute("status",true);
         return "redirect:/";
