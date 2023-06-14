@@ -33,12 +33,12 @@ public class CafeRepository implements CafeInterface {
     }
 
     @Override
-    public List<CafeMember> findByFran(String cafeType) {
+    public List<CafeMember> findByFran() {
        return findAll().stream().filter(m->m.getCafeType().equals("프랜차이즈")).collect(Collectors.toList());
     }
 
     @Override
-    public List<CafeMember> findByGam(String cafeType) {
+    public List<CafeMember> findByGam() {
         return findAll().stream().filter(m->m.getCafeType().equals("감성카페")).collect(Collectors.toList());
     }
 }
