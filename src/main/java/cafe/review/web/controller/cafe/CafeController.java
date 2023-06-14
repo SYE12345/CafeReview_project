@@ -2,7 +2,9 @@ package cafe.review.web.controller.cafe;
 
 
 import cafe.review.domain.CafeMember;
+import cafe.review.domain.Member;
 import cafe.review.repository.cafeNameSearchCond;
+import cafe.review.service.MemberServiceInterface;
 import cafe.review.service.cafe.CafeMemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,7 @@ import java.util.stream.Collectors;
 public class CafeController {
 
     private final CafeMemberServiceInterface cafeMemberServiceInterface;
+    private final MemberServiceInterface memberServiceInterface;
 
 
     @GetMapping("/All_list")
@@ -25,6 +28,15 @@ public class CafeController {
         model.addAttribute("cafes", cafeMembers);
         return "cafe/All_list";
     }
+    @GetMapping("/{loginId}/All_list_login")
+    public String All_list_login(@PathVariable String loginId, Model model){
+        List<CafeMember> cafeMembers = cafeMemberServiceInterface.findAll();
+        Member member = memberServiceInterface.findByLoginId(loginId).get();
+        model.addAttribute("member",member);
+        model.addAttribute("cafes", cafeMembers);
+        return "cafe/All_list_login";
+    }
+
 
     @GetMapping("/All_list/{cafeName}")
     public String detailsForm(@PathVariable String cafeName, Model model){
@@ -46,22 +58,5 @@ public class CafeController {
         model.addAttribute("cafes", cafetypes2);
         return "cafe/findByGam";
     }
-
-//    @GetMapping("/searchByName")
-//    public String searchByName_Form(@ModelAttribute("cafeName") String cafeName, Model model){
-//        List<CafeMember> searchbyname = cafeMemberServiceInterface.searchByName(cafeName);
-//        model.addAttribute("cafes", searchbyname);
-//        return "cafe/All_list";
-//    }
-//
-    @GetMapping("/searchByName")
-    public String seacrhByName(@ModelAttribute("cafes") cafeNameSearchCond cond, Model model){
-        List<CafeMember> result = cafeMemberServiceInterface.searchBycafeName(cond);
-        model.addAttribute("cafes", result);
-        return "cafe/All_list";
-    }
-
-
-
 }
 

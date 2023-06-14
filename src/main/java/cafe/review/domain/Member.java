@@ -1,5 +1,6 @@
 package cafe.review.domain;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
@@ -8,16 +9,16 @@ public class Member {
     // 시퀀스 자동 생성용 id
     private Long id;
     // 로그인 아이디(공백 불가)
-    @NotEmpty(message = "아이디는 띄어쓰기가 불가합니다.")
+    @NotBlank(message = "아이디는 띄어쓰기가 불가합니다.")
     private String loginId;
 
     // 비밀번호(공백 불가)
-    @NotEmpty(message = "비밀번호는 띄어쓰기가 불가합니다.")
+    @NotBlank(message = "비밀번호는 띄어쓰기가 불가합니다.")
     private String password;
-    @NotEmpty(message = "비밀번호가 일치하지 않습니다.")
+    @NotBlank(message = "비밀번호가 일치하지 않습니다.")
     private String password2;
     // 사용자 이름
-    @NotEmpty(message = "이름을 입력하세요." )
+    @NotBlank(message = "이름을 입력하세요." )
     private String name;
     // 사용자 이메일
     private String email;
