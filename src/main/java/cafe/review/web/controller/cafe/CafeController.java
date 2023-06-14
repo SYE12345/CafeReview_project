@@ -2,16 +2,15 @@ package cafe.review.web.controller.cafe;
 
 
 import cafe.review.domain.CafeMember;
+import cafe.review.repository.cafeNameSearchCond;
 import cafe.review.service.cafe.CafeMemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
@@ -47,5 +46,22 @@ public class CafeController {
         model.addAttribute("cafes", cafetypes2);
         return "cafe/findByGam";
     }
+
+//    @GetMapping("/searchByName")
+//    public String searchByName_Form(@ModelAttribute("cafeName") String cafeName, Model model){
+//        List<CafeMember> searchbyname = cafeMemberServiceInterface.searchByName(cafeName);
+//        model.addAttribute("cafes", searchbyname);
+//        return "cafe/All_list";
+//    }
+//
+    @GetMapping("/searchByName")
+    public String seacrhByName(@ModelAttribute("cafes") cafeNameSearchCond cond, Model model){
+        List<CafeMember> result = cafeMemberServiceInterface.searchBycafeName(cond);
+        model.addAttribute("cafes", result);
+        return "cafe/All_list";
+    }
+
+
+
 }
 

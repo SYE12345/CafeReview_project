@@ -1,6 +1,7 @@
 package cafe.review.service.cafe;
 
 import cafe.review.domain.CafeMember;
+import cafe.review.repository.cafeNameSearchCond;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,4 +16,7 @@ public interface CafeMemberServiceInterface {
     List<CafeMember> findByFran();
 
     List<CafeMember> findByGam();
+
+//    List<CafeMember> searchByName(CafeMember member);
+    List<CafeMember> searchBycafeName(cafeNameSearchCond cafeNameSearch);
 }

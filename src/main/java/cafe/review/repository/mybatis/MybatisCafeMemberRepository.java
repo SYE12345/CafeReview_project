@@ -2,6 +2,7 @@ package cafe.review.repository.mybatis;
 
 import cafe.review.domain.CafeMember;
 import cafe.review.repository.cafe.CafeInterface;
+import cafe.review.repository.cafeNameSearchCond;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -37,5 +38,16 @@ public class MybatisCafeMemberRepository implements CafeInterface {
     @Override
     public List<CafeMember> findByGam() {
         return cafeMemberMapper.findByGam();
+    }
+
+//    @Override
+//    public List<CafeMember> searchByName(CafeMember member) {
+//        return cafeMemberMapper.searchByName(member);
+//    }
+
+
+    @Override
+    public List<CafeMember> searchBycafeName(cafeNameSearchCond cond) {
+        return cafeMemberMapper.searchBycafeName(cond);
     }
 }

@@ -7,10 +7,13 @@
             <ul id="menu">
                 <li class="navbar bg-body-tertiary" >
                     <div class="container-fluid">
-                        <form class="d-flex" role="search" action="main.html" th:action method="get">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        <form class="d-flex" role="search" th:object="${cond}" method="get">
+                            <input class="form-control me-2" th:field="${}" placeholder="Search" aria-label="Search" >
+<!--12345678912345678912345678912345678912345678912345678912345678912345678912345678                            &ndash;&gt;-->
+                            <button class="btn btn-outline-success"
+                                    type="submit">Search</button>
                         </form>
+
                     </div>
                 </li>
                 <!--        <li><a>타임리프변경 님환영합니다</a></li>-->
