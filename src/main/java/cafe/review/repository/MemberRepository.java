@@ -7,10 +7,12 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 @Slf4j
 @Repository
+
 public class MemberRepository implements MemberInterface {
 
     private static final Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
+
 
     @Override
     public Member save(Member member) {
@@ -78,4 +80,5 @@ public class MemberRepository implements MemberInterface {
         findMember.setEmail(memberUpdateParam.getEmail());
         findMember.setPhoneNumber(memberUpdateParam.getPhoneNumber());
     }
+
 }

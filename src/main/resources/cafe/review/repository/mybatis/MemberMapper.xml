@@ -11,6 +11,7 @@
         VALUES (#{id}, #{loginId}, #{password}, #{password2}, #{name}, #{email}, #{phoneNumber})
     </insert>
 
+
 <!--호출구문 : void update(@Param("id") Long id, @Param("updateParam") ItemUpdateDto updateParam); -->
     <update id="update">
         update member

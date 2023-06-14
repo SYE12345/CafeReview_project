@@ -4,8 +4,9 @@ import cafe.review.domain.Member;
 import cafe.review.repository.MemberInterface;
 import cafe.review.repository.MemberUpdateDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import cafe.review.repository.MemberRepository;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,5 +58,19 @@ public class MemberService implements MemberServiceInterface{
     @Override
     public void update(String loginId, MemberUpdateDto memberUpdateParam) {
         memberInterface.update(loginId, memberUpdateParam);
+    }
+
+    //중복 id check
+    public String join(Member member){
+        validateDuplicateMember(member);
+        memberInterface.save(member);
+        return member.getLoginId();
+    }
+
+    private void validateDuplicateMember(Member member){
+        Optional<Member> result = memberInterface.findByLoginId(member.getLoginId());
+        result.ifPresent(m->{
+            throw new IllegalStateException("이미 존재하는 아이디입니다.");
+        });
     }
 }

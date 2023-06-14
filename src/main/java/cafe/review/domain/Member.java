@@ -10,6 +10,7 @@ public class Member {
     // 로그인 아이디(공백 불가)
     @NotEmpty(message = "아이디는 띄어쓰기가 불가합니다.")
     private String loginId;
+
     // 비밀번호(공백 불가)
     @NotEmpty(message = "비밀번호는 띄어쓰기가 불가합니다.")
     private String password;

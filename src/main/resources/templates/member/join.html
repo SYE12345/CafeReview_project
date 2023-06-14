@@ -31,11 +31,10 @@
       </h3>
       <span class="box int_id">
                         <input type="text" id="loginId" class="int" maxlength="20" th:field="*{loginId}">
-                        <span class="step_url"></span>
+                        <span class="alertTxt" th:errors= "*{loginId}"> 아이디 중복</span>
                     </span>
-      <span class="error_next_box"></span>
+<!--      <div class="error_next_box"></div>-->
     </div>
-
     <!-- PW1 -->
     <div>
       <h3 class="join_title"><label for="password">비밀번호</label></h3>

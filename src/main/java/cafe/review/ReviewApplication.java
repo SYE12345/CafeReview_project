@@ -21,19 +21,22 @@ public class ReviewApplication {
 	}
 
 	@Bean
+
 	@Profile("local")
 	public TestMemberDataInit testMemberDataInit(MemberServiceInterface memberServiceInterface){
 		return new TestMemberDataInit(memberServiceInterface);
 	}
-	@Bean
-	@Profile("local")
-	public TestCafeDataInit testCafeDataInit(CafeMemberServiceInterface cafeMemberServiceInterface){
-		return new TestCafeDataInit(cafeMemberServiceInterface);
-	}
+//	@Bean
+//
+//	@Profile("local")
+//	public TestCafeDataInit testCafeDataInit(CafeMemberServiceInterface cafeRepository){
+//		return new TestCafeDataInit(cafeRepository);
+//	}
 
-	@Bean
-	@Profile("local")
-	public  TestReviewDataInit testReviewDataInit(ReviewServiceInterface reviewServiceInterface){
-		return new TestReviewDataInit(reviewServiceInterface);
-	}
+//	@Bean
+//
+//	@Profile("local")
+//	public  TestReviewDataInit testReviewDataInit(ReviewServiceInterface reviewServiceInterface){
+//		return new TestReviewDataInit(reviewServiceInterface);
+//	}
 }

@@ -15,6 +15,9 @@ public class MybatisMemberRepository implements MemberInterface {
     private final MemberMapper memberMapper;
     @Override
     public Member save(Member member) {
+//        memberMapper.save(member);
+//        return member;
+        validateDuplicateMember(member);
         memberMapper.save(member);
         return member;
     }
@@ -58,5 +61,13 @@ public class MybatisMemberRepository implements MemberInterface {
     public void update(String loginId, MemberUpdateDto UpdateParam) {
         memberMapper.update(loginId, UpdateParam);
 
+    }
+
+    //중복 id check
+    private void validateDuplicateMember(Member member) {
+        Optional<Member> result = memberMapper.findByLoginId(member.getLoginId());
+        result.ifPresent(m -> {
+            throw new IllegalStateException("이미 존재하는 아이디입니다.");
+        });
     }
 }

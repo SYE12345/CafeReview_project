@@ -33,4 +33,5 @@ public interface MemberServiceInterface {
 
     // 회원 정보 수정용(MemberUpdateDto 클래스 사용)
     void update(String loginId, MemberUpdateDto memberUpdateParam);
+
 }

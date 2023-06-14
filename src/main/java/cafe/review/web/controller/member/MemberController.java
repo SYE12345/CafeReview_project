@@ -7,10 +7,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 @Slf4j
 @Controller
 @RequiredArgsConstructor
@@ -24,10 +25,22 @@ public class MemberController {
         return "member/join";
     }
 
+//    @PostMapping("/join")
+//    public String join(Member member) {
+//        memberServiceInterface.save(member);
+//        return "redirect:/";
+//    }
+
     @PostMapping("/join")
-    public String join(Member member) {
-        memberServiceInterface.save(member);
-        return "redirect:/";
+    public String join(@Validated @ModelAttribute
+                       Member member, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+        if(bindingResult.hasErrors()){
+            return "member/join";
+        }
+        Member savedMember = memberServiceInterface.save(member);
+        redirectAttributes.addAttribute("loginId",savedMember.getLoginId());
+        redirectAttributes.addAttribute("status",true);
+        return "redirect:/member/join/{loginId}";
     }
 
     @GetMapping("/{loginId}/myInfo")
@@ -43,7 +56,4 @@ public class MemberController {
 
         return "redirect:/";
     }
-
-
-
 }
