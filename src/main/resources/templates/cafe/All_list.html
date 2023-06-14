@@ -182,7 +182,7 @@
 
       <section>
         <h2>카페 리스트</h2>
-        <article th:each="cafe : ${cafes}" th:onclick="|location.href='@{/{cafeName}(cafeName=${cafe.cafeName})}'|">
+        <article th:each="cafe : ${cafes}" th:onclick="|location.href='@{/All_list/{cafeName}(cafeName=${cafe.cafeName})}'|">
 <!--        <article th:each="cafe : ${cafes}" th:href="@{All_list/{cafeName}(cafeName=${cafe.cafeName})}">-->
           <img src="images/Personal/dozenmatter/더즌매터1.jpg"
           th:src="|images/${cafe.cafeType}/${cafe.cafeName}/내부1.jpg|">

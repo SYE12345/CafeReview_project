@@ -16,7 +16,6 @@ public class TestReviewDataInit {
 
     @EventListener(ApplicationReadyEvent.class)
     public void initCafeData(){
-
         log.info("initCafeData] "+ reviewServiceInterface );
         reviewServiceInterface.save(new Review("reviewtest1", "ㅇㅇ"));
     }

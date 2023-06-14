@@ -41,23 +41,23 @@
       <tr>
         <td>
           <img src="images/Cafe/Dozenmatter/더즌매터1.jpg" width="360" height="350"
-          th:src="|images/${cafe.cafeType}/${cafe.cafeName}/1.jpg|">
+          th:src="|/images/${cafe.cafeType}/${cafe.cafeName}/1.jpg|">
         </td>
         <td>
           <img src="images/Cafe/Dozenmatter/더즌매터2.jpg" width="360" height="350"
-               th:src="|images/${cafe.cafeType}/${cafe.cafeName}/2.jpg|">
+               th:src="|/images/${cafe.cafeType}/${cafe.cafeName}/2.jpg|">
         </td>
         <td>
           <img src="images/Cafe/Dozenmatter/더즌매터3.jpg" width="360" height="350"
-               th:src="|images/${cafe.cafeType}/${cafe.cafeName}/내부1.jpg|">
+               th:src="|/images/${cafe.cafeType}/${cafe.cafeName}/내부1.jpg|">
         </td>
         <td>
           <img src="images/Cafe/Dozenmatter/더즌매터4.jpg" width="360" height="350"
-               th:src="|images/${cafe.cafeType}/${cafe.cafeName}/3.jpg|">
+               th:src="|/images/${cafe.cafeType}/${cafe.cafeName}/3.jpg|">
         </td>
         <td>
           <img src="images/Cafe/Dozenmatter/더즌매터5.jpg" width="360" height="350"
-               th:src="|images/${cafe.cafeType}/${cafe.cafeName}/4.jpg|">
+               th:src="|/images/${cafe.cafeType}/${cafe.cafeName}/4.jpg|">
         </td>
       </tr>
     </table>
@@ -119,7 +119,7 @@
  </table>
   <div class="img" th:each="cafe : ${cafes}">
     <img src="images/Cafe/Dozenmatter/더즌매터1.jpg"
-         th:src="|images/${cafe.cafeType}/${cafe.cafeName}/내부1.jpg|">
+         th:src="|/images/${cafe.cafeType}/${cafe.cafeName}/내부1.jpg|">
 <!--    <ul>-->
 <!--      <li class="on"><a href="#"><img src="images/img.jpg" alt=""></a></li>-->
 <!--      <li><a href="imgages/logo.jpg"><img src="images/img.jpg" alt=""></a></li>-->
@@ -139,11 +139,11 @@
     <section>
         <aside th:each="cafe : ${cafes}">
             <img src="images/Cafe/Dozenmatter/map.jpg" width="230" heaight="220"
-                 th:src="|images/${cafe.cafeType}/${cafe.cafeName}/지도.jpg|">
+                 th:src="|/images/${cafe.cafeType}/${cafe.cafeName}/지도.jpg|">
             <img src="images/Personal/dozenmatter/더즌매터1.jpg" width="230" height="220"
-                 th:src="|images/${cafe.cafeType}/${cafe.cafeName}/1.jpg|">
+                 th:src="|/images/${cafe.cafeType}/${cafe.cafeName}/1.jpg|">
             <img src="images/Personal/dozenmatter/더즌매터2.jpg" width="230" height="220"
-                 th:src="|images/${cafe.cafeType}/${cafe.cafeName}/4.jpg|">
+                 th:src="|/images/${cafe.cafeType}/${cafe.cafeName}/4.jpg|">
         </aside>
     </section>
 </div>

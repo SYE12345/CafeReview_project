@@ -37,6 +37,9 @@ public class MybatisConfig {
     public MemberInterface memberInterface() {
         return new MybatisMemberRepository(memberMapper);
     }
+
+    // 로그인 관련 끝
+
     @Bean
     public CafeMemberServiceInterface cafeMemberServiceInterface(){
         return new CafeMemberService(cafeInterface());
@@ -45,6 +48,8 @@ public class MybatisConfig {
     public CafeInterface cafeInterface(){
         return new MybatisCafeMemberRepository(cafeMemberMapper);
     }
+
+    // 카페 관련
 
     @Bean
     public ReviewServiceInterface reviewServiceInterface(){

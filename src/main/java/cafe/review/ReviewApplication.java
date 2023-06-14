@@ -27,8 +27,8 @@ public class ReviewApplication {
 	}
 	@Bean
 	@Profile("local")
-	public TestCafeDataInit testCafeDataInit(CafeMemberServiceInterface cafeRepository){
-		return new TestCafeDataInit(cafeRepository);
+	public TestCafeDataInit testCafeDataInit(CafeMemberServiceInterface cafeMemberServiceInterface){
+		return new TestCafeDataInit(cafeMemberServiceInterface);
 	}
 
 	@Bean

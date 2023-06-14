@@ -15,6 +15,7 @@ public class CafeMember {
 
     public CafeMember(){
     }
+
     public CafeMember(String cafeName, String address, String cafeNumber, String menu1, String menu2, String menu3, String cafeType) {
         this.cafeName = cafeName;
         this.address = address;
