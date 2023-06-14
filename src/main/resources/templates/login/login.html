@@ -15,6 +15,9 @@
     .login a{
       text-decoration-line: none;
     }
+    .alertTxt{
+      color: red;
+    }
   </style>
 </head>
 
@@ -32,6 +35,7 @@
   <ul>
     <li><input type="text" placeholder="아이디" th:field="*{loginId}"title="아이디입력"></li>
     <li><input type="password" placeholder="비밀번호" title="비밀번호입력" th:field="*{password}"> </li>
+    <span class="alertTxt" th:errors="*{password}">비밀번호가 올바르지 않습니다.</span>
 <!--    <li><input type="checkbox" id="chk_id"><label for="chk_id">아이디저장</label></li>-->
       <li><button type="submit">
       <span>로그인</span>

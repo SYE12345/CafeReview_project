@@ -37,7 +37,7 @@ public class LoginController {
         Member loginMember = loginInterface.login(form.getLoginId(), form.getPassword());
 
         if (loginMember == null) {
-            bindingResult.reject("loginFail","아이디 또는 비밀번호가 바르지 않습니다.");
+            bindingResult.rejectValue("password","fail login","아이디 또는 비밀번호가 바르지 않습니다.");
             return "login/login";
         }
 
