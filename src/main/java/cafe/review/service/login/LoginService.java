@@ -1,6 +1,7 @@
-package cafe.review.service;
+package cafe.review.service.login;
 
 import cafe.review.domain.Member;
+import cafe.review.service.member.MemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

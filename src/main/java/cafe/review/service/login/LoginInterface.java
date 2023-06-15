@@ -1,4 +1,4 @@
-package cafe.review.service;
+package cafe.review.service.login;
 
 import cafe.review.domain.Member;
 

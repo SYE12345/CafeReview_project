@@ -1,11 +1,8 @@
 package cafe.review;
 
-import cafe.review.config.BaseConfig;
 import cafe.review.config.MybatisConfig;
-import cafe.review.repository.cafe.CafeRepository;
-import cafe.review.service.MemberServiceInterface;
-import cafe.review.service.cafe.CafeMemberServiceInterface;
-import cafe.review.service.review.ReviewServiceInterface;
+import cafe.review.service.member.MemberServiceInterface;
+import cafe.review.testData.TestMemberDataInit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

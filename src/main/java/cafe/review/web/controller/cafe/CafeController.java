@@ -3,14 +3,14 @@ package cafe.review.web.controller.cafe;
 
 import cafe.review.domain.CafeMember;
 import cafe.review.domain.Member;
-import cafe.review.repository.cafeNameSearchCond;
-import cafe.review.service.MemberServiceInterface;
+import cafe.review.service.member.MemberServiceInterface;
 import cafe.review.service.cafe.CafeMemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,12 +45,22 @@ public class CafeController {
         return "cafe/details";
     }
 
+    // 순수
     @GetMapping("/findByFran")
     public String findByFran(Model model){
         List<CafeMember> cafetypes = cafeMemberServiceInterface.findByFran();
         model.addAttribute("cafes", cafetypes);
         return "cafe/findByFran";
     }
+
+    // 정렬기능 추가
+//    @GetMapping("/findByFran")
+    public String findByFranSort(Model model){
+        List<CafeMember> cafetypes = cafeMemberServiceInterface.findByFran().stream().sorted(Comparator.comparing(CafeMember::getCafeName)).collect(Collectors.toList());
+        model.addAttribute("cafes", cafetypes);
+        return "cafe/findByFran";
+    }
+
 
     @GetMapping("/findByGam")
     public String findByGam(Model model){

@@ -1,7 +1,7 @@
-package cafe.review.service;
+package cafe.review.service.member;
 
 import cafe.review.domain.Member;
-import cafe.review.repository.MemberUpdateDto;
+import cafe.review.repository.member.MemberUpdateDto;
 
 import java.util.List;
 import java.util.Optional;

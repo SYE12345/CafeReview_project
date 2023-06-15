@@ -1,4 +1,4 @@
-package cafe.review.repository;
+package cafe.review.repository.member;
 
 import lombok.Data;
 

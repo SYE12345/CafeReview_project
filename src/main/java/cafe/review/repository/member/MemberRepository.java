@@ -1,4 +1,4 @@
-package cafe.review.repository;
+package cafe.review.repository.member;
 
 import cafe.review.domain.Member;
 import lombok.extern.slf4j.Slf4j;

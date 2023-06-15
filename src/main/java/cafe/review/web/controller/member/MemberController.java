@@ -1,8 +1,8 @@
 package cafe.review.web.controller.member;
 
 import cafe.review.domain.Member;
-import cafe.review.repository.MemberUpdateDto;
-import cafe.review.service.MemberServiceInterface;
+import cafe.review.repository.member.MemberUpdateDto;
+import cafe.review.service.member.MemberServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

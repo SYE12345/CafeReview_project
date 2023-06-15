@@ -1,7 +1,7 @@
 package cafe.review.web.interceptor;
 
 
-import cafe.review.repository.SessionConst;
+import cafe.review.repository.member.SessionConst;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;

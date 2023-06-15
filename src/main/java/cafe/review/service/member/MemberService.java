@@ -1,12 +1,11 @@
-package cafe.review.service;
+package cafe.review.service.member;
 
 import cafe.review.domain.Member;
-import cafe.review.repository.MemberInterface;
-import cafe.review.repository.MemberUpdateDto;
+import cafe.review.repository.member.MemberInterface;
+import cafe.review.repository.member.MemberUpdateDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import cafe.review.repository.MemberRepository;
+
 import java.util.List;
 import java.util.Optional;
 

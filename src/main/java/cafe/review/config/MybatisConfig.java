@@ -1,15 +1,13 @@
 package cafe.review.config;
 
-import cafe.review.repository.MemberInterface;
-import cafe.review.repository.MemberRepository;
+import cafe.review.repository.member.MemberInterface;
 import cafe.review.repository.cafe.CafeInterface;
-import cafe.review.repository.cafe.CafeRepository;
 import cafe.review.repository.mybatis.*;
 import cafe.review.repository.review.ReviewInterface;
-import cafe.review.service.LoginInterface;
-import cafe.review.service.LoginService;
-import cafe.review.service.MemberService;
-import cafe.review.service.MemberServiceInterface;
+import cafe.review.service.login.LoginInterface;
+import cafe.review.service.login.LoginService;
+import cafe.review.service.member.MemberService;
+import cafe.review.service.member.MemberServiceInterface;
 import cafe.review.service.cafe.CafeMemberService;
 import cafe.review.service.cafe.CafeMemberServiceInterface;
 import cafe.review.service.review.ReviewService;

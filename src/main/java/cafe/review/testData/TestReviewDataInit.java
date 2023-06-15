@@ -1,4 +1,4 @@
-package cafe.review;
+package cafe.review.testData;
 
 import cafe.review.domain.CafeMember;
 import cafe.review.domain.Review;

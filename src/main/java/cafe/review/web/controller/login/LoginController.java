@@ -1,9 +1,9 @@
 package cafe.review.web.controller.login;
 
 import cafe.review.domain.Member;
-import cafe.review.repository.SessionConst;
-import cafe.review.service.LoginInterface;
-import cafe.review.service.MemberServiceInterface;
+import cafe.review.repository.member.SessionConst;
+import cafe.review.service.login.LoginInterface;
+import cafe.review.service.member.MemberServiceInterface;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
