@@ -2,7 +2,7 @@ package cafe.review.repository.mybatis;
 
 import cafe.review.domain.CafeMember;
 import cafe.review.repository.cafe.CafeInterface;
-import cafe.review.repository.cafeNameSearchCond;
+import cafe.review.repository.cafe.cafeNameSearchCond;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -47,7 +47,7 @@ public class MybatisCafeMemberRepository implements CafeInterface {
 
 
     @Override
-    public List<CafeMember> searchBycafeName(cafeNameSearchCond cond) {
-        return cafeMemberMapper.searchBycafeName(cond);
+    public List<CafeMember> searchByCafeName(String cafeName) {
+        return cafeMemberMapper.searchByCafeName(cafeName);
     }
 }

@@ -1,7 +1,7 @@
 create table review(
     id number primary key,
-    review_title VARCHAR2(50),
-    review_content VARCHAR2(50)
+    review_title VARCHAR2(50) not null,
+    review_content VARCHAR2(50) not null
 );
 
 create SEQUENCE review_seq

@@ -1,7 +1,7 @@
 package cafe.review.repository.mybatis;
 
 import cafe.review.domain.CafeMember;
-import cafe.review.repository.cafeNameSearchCond;
+import cafe.review.repository.cafe.cafeNameSearchCond;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -18,5 +18,5 @@ public interface CafeMemberMapper {
     List<CafeMember> findByGam();
 
 //    List<CafeMember> searchByName(CafeMember member);
-    List<CafeMember> searchBycafeName(cafeNameSearchCond cond);
+    List<CafeMember> searchByCafeName(String cafeName);
 }

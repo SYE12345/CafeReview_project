@@ -2,7 +2,7 @@ package cafe.review.service.cafe;
 
 import cafe.review.domain.CafeMember;
 import cafe.review.repository.cafe.CafeInterface;
-import cafe.review.repository.cafeNameSearchCond;
+import cafe.review.repository.cafe.cafeNameSearchCond;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -45,7 +45,7 @@ public class CafeMemberService implements CafeMemberServiceInterface {
 //    }
 
     @Override
-    public List<CafeMember> searchBycafeName(cafeNameSearchCond cafeNameSearch) {
-        return cafeInterface.searchBycafeName(cafeNameSearch);
+    public List<CafeMember> searchBycafeName(String cafeName) {
+        return cafeInterface.searchByCafeName(cafeName);
     }
 }

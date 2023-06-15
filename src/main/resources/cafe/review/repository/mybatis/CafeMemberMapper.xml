@@ -34,7 +34,7 @@
         where cafe_type = '감성카페'
     </select>
 
-    <select id="searchByName" resultType="cafemember">
+    <select id="searchByCafeName" resultType="cafemember">
         select *
         from cafe_member
         where cafe_name like '%'||#{cafeName}||'%'

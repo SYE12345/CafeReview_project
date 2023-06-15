@@ -28,6 +28,8 @@ public class CafeController {
         model.addAttribute("cafes", cafeMembers);
         return "cafe/All_list";
     }
+
+
     @GetMapping("/{loginId}/All_list_login")
     public String All_list_login(@PathVariable String loginId, Model model){
         List<CafeMember> cafeMembers = cafeMemberServiceInterface.findAll();
@@ -54,7 +56,7 @@ public class CafeController {
     }
 
     // 정렬기능 추가
-//    @GetMapping("/findByFran")
+    @GetMapping("/sortedFran")
     public String findByFranSort(Model model){
         List<CafeMember> cafetypes = cafeMemberServiceInterface.findByFran().stream().sorted(Comparator.comparing(CafeMember::getCafeName)).collect(Collectors.toList());
         model.addAttribute("cafes", cafetypes);
@@ -68,5 +70,20 @@ public class CafeController {
         model.addAttribute("cafes", cafetypes2);
         return "cafe/findByGam";
     }
+
+    @GetMapping("/sortedGam")
+    public String findByGamSort(Model model){
+        List<CafeMember> cafetypes = cafeMemberServiceInterface.findByGam().stream().sorted(Comparator.comparing(CafeMember::getCafeName)).collect(Collectors.toList());
+        model.addAttribute("cafes", cafetypes);
+        return "cafe/findByGam";
+    }
+
+    @PostMapping("searchByCafeName")
+    public String searchByCafeName(@RequestParam("cafeName") String cafeName, Model model) {
+        List<CafeMember> result = cafeMemberServiceInterface.searchBycafeName(cafeName).stream().collect(Collectors.toList());
+        model.addAttribute("cafes", result);
+        return "cafe/All_list";
+    }
+
 }
 

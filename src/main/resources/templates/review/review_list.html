@@ -117,6 +117,7 @@
         <form action="review_list.html" th:action th:object="${review}" method="post">
         <h2>리뷰 전체 페이지</h2>
         <div class="row">
+
           <div class="col">
             <button class="btn btn-primary float-end"
                     th:onclick="|location.href='@{/review}'|" type="button">
@@ -125,7 +126,7 @@
         </div><br>
             <article th:each="review : ${reviews}">
                 <!--        <article th:each="cafe : ${cafes}" th:href="@{All_list/{cafeName}(cafeName=${cafe.cafeName})}">-->
-                <h1 th:text="|리뷰제목 : ${review.reviewTitle}|">리뷰 제목</h1>
+                <h1 th:text="|카페 이름 : ${review.reviewTitle}|">리뷰 제목</h1>
                 <h3 th:text="|리뷰 내용: ${review.reviewContent}|">주소: 인천 부평구 부평대로38번길 28</h3>
 
             </article>

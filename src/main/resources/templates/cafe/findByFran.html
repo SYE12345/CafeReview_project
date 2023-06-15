@@ -162,7 +162,10 @@
       <section>
           <section>
               <h2>프랜차이즈 카페 베스트 10곳</h2>
-              <h2 style="color: #cccccc" >"부평구 프랜차이즈 카페"</h2>
+              <h2 style="color: #cccccc" >"부평구 프랜차이즈 카페"</h2><button class="btn btn-primary float-end"
+                                                                     onclick="location.href='addForm.html'"
+                                                                     th:onclick="|location.href='@{/sortedFran}'|"
+                                                                     type="button">가나다 순 정렬</button>
               <hr>
         <article th:each="cafe : ${cafes}" th:onclick="|location.href='@{/All_list/{cafeName}(cafeName=${cafe.cafeName})}'|">
 <!--        <article th:each="cafe : ${cafes}" th:href="@{All_list/{cafeName}(cafeName=${cafe.cafeName})}">-->

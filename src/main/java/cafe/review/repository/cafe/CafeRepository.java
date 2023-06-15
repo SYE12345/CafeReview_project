@@ -1,7 +1,6 @@
 package cafe.review.repository.cafe;
 
 import cafe.review.domain.CafeMember;
-import cafe.review.repository.cafeNameSearchCond;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
@@ -50,7 +49,7 @@ public class CafeRepository implements CafeInterface {
 
 
     @Override
-    public List<CafeMember> searchBycafeName(cafeNameSearchCond cond) {
-        return findAll().stream().filter(m->m.getCafeName().contains(cond.getCafeName())).collect(Collectors.toList());
+    public List<CafeMember> searchByCafeName(String cafeName) {
+        return findAll().stream().filter(m->m.getCafeName().contains(cafeName)).collect(Collectors.toList());
     }
 }
