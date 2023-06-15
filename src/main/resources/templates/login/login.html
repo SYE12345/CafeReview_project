@@ -33,8 +33,8 @@
   <h2>로그인</h2>
   <form action="login.html" th:action th:object="${loginForm}" method="post">
   <ul>
-    <li><input type="text" placeholder="아이디" th:field="*{loginId}"title="아이디입력"></li>
-    <li><input type="password" placeholder="비밀번호" title="비밀번호입력" th:field="*{password}"> </li>
+    <li><input type="text" placeholder="아이디" th:field="*{loginId}"title="아이디입력" required></li>
+    <li><input type="password" placeholder="비밀번호" title="비밀번호입력" th:field="*{password}" required> </li>
     <span class="alertTxt" th:errors="*{password}">비밀번호가 올바르지 않습니다.</span>
 <!--    <li><input type="checkbox" id="chk_id"><label for="chk_id">아이디저장</label></li>-->
       <li><button type="submit">
