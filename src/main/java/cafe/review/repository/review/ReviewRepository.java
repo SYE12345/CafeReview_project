@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Repository
 public class ReviewRepository implements ReviewInterface{
@@ -25,5 +26,11 @@ public class ReviewRepository implements ReviewInterface{
     @Override
     public List<Review> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    @Override
+    public List<Review> searchByReviewTitle(String reviewTitle) {
+        return new ArrayList<>(store.values().stream()
+                .filter(m->m.getReviewTitle().equals(reviewTitle)).collect(Collectors.toList()));
     }
 }

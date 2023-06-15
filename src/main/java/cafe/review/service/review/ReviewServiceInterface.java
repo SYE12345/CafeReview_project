@@ -9,5 +9,7 @@ public interface ReviewServiceInterface {
 
     List<Review> findAll();
 
+    List<Review> searchByReviewTitle(String reviewTitle);
+
 
 }

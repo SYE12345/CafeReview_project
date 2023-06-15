@@ -16,4 +16,10 @@
         from review
     </select>
 
+    <select id="searchByReviewTitle" resultType="review">
+        select *
+        from review
+        where review_title like '%'||#{reviewTitle}||'%'
+    </select>
+
 </mapper>

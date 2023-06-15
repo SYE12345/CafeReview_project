@@ -114,10 +114,16 @@
 <div id="wrapper">
   <div th:insert="~{/main/header.html}"></div>
       <section>
-        <form action="review_list.html" th:action th:object="${review}" method="post">
+<!--        <form action="review_list.html" th:action th:object="${review}" method="post">-->
         <h2>리뷰 전체 페이지</h2>
         <div class="row">
+            <div class="col">
 
+            <form role="search" th:action="searchByReviewTitle" method="post">
+                <input placeholder="카페 이름으로 리뷰 검색" aria-label="Search" id="reviewTitle" name="reviewTitle">
+                <button type="submit">Search</button>
+            </form>
+            </div>
           <div class="col">
             <button class="btn btn-primary float-end"
                     th:onclick="|location.href='@{/review}'|" type="button">
@@ -141,7 +147,7 @@
 <!--            </p><br>-->
 <!--          </div>-->
 <!--          </table>-->
-        </form>
+<!--        </form>-->
       </section>
 
   <div th:insert="~{/main/footer.html}"></div>

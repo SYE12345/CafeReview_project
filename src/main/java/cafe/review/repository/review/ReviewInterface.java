@@ -11,4 +11,6 @@ public interface ReviewInterface {
 
     List<Review> findAll();
 
+    List<Review> searchByReviewTitle(String reviewTitle);
+
 }

@@ -20,4 +20,9 @@ public class ReviewService implements ReviewServiceInterface{
     public List<Review> findAll() {
         return reviewInterface.findAll();
     }
+
+    @Override
+    public List<Review> searchByReviewTitle(String reviewTitle) {
+        return reviewInterface.searchByReviewTitle(reviewTitle);
+    }
 }

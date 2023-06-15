@@ -10,4 +10,5 @@ public interface ReviewMemberMapper {
     void save(Review review);
 
     List<Review> findAll();
+    List<Review> searchByReviewTitle(String reviewTitle);
 }

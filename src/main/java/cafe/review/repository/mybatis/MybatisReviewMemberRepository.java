@@ -20,4 +20,9 @@ public class MybatisReviewMemberRepository implements ReviewInterface {
     public List<Review> findAll() {
         return reviewMemberMapper.findAll();
     }
+
+    @Override
+    public List<Review> searchByReviewTitle(String reviewTitle) {
+        return reviewMemberMapper.searchByReviewTitle(reviewTitle);
+    }
 }
