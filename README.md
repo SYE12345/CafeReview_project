@@ -1,23 +1,23 @@
 # CafeReview_project
 CafeReview 프로젝트(2023.06.08~2023.06.15)
 
-## 프로젝트 목표/소개
+## 📗프로젝트 목표/소개
 1. 사용자들에게 맞는 카페 목록과 상세 정보를 제공
 2. 카페별로 리뷰를 편리하게 작성하고 공유할 수 있는 환경 제공
 
-## 개발환경(사용도구/언어)
+## 🛠개발환경(사용도구/언어)
 - IntelliJ(Java, html, css, js, spring boot, spring)
 - pycharm(Python)
 - Oracle
 - github(형상관리)
 
-## 담당역할
+## 👩🏻‍💻담당역할
 1. 카페 리스트 페이지 구현
 2. 카페 리뷰 작성 페이지 구현
 3. 회원가입/로그인시 유효성검사
 
    
-## 화면/기능설명
+## 📝프로젝트 구현 - 화면/기능설명
 ![image](https://github.com/SYE12345/CafeReview_project/assets/129352928/b22e1b31-d3f7-489d-be63-8b8c44a7f826) ![image](https://github.com/SYE12345/CafeReview_project/assets/129352928/3f510770-fa45-46fd-9464-a29d3c6ad90e)
 
 
