@@ -80,7 +80,7 @@ public class CafeController {
 
     @PostMapping("searchByCafeName")
     public String searchByCafeName(@RequestParam("cafeName") String cafeName, Model model) {
-        List<CafeMember> result = cafeMemberServiceInterface.searchBycafeName(cafeName).stream().collect(Collectors.toList());
+        List<CafeMember> result = cafeMemberServiceInterface.searchBycafeName(cafeName);
         model.addAttribute("cafes", result);
         return "cafe/All_list";
     }
