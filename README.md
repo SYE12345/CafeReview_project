@@ -11,13 +11,13 @@ CafeReview 프로젝트(2023.06.08~2023.06.15)
 - Oracle
 - github(형상관리)
 
-### 담당역할
+## 담당역할
 1. 카페 리스트 페이지 구현
 2. 카페 리뷰 작성 페이지 구현
 3. 회원가입/로그인시 유효성검사
 
    
-### 화면/기능설명
+## 화면/기능설명
 ![image](https://github.com/SYE12345/CafeReview_project/assets/129352928/b22e1b31-d3f7-489d-be63-8b8c44a7f826) ![image](https://github.com/SYE12345/CafeReview_project/assets/129352928/3f510770-fa45-46fd-9464-a29d3c6ad90e)
 
 
