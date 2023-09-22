@@ -1,15 +1,24 @@
-# CafeReview_project
-CafeReview 프로젝트(2023.06.08~2023.06.15)
-
-## 📗프로젝트 목표/소개
-1. 사용자들에게 맞는 카페 목록과 상세 정보를 제공
-2. 카페별로 리뷰를 편리하게 작성하고 공유할 수 있는 환경 제공
+# 📌 CafeReview_project
+> CafeReview 프로젝트(2023.06.08~2023.06.15)
+> 팀 프로젝트(4명)
 
 ## 🛠개발환경(사용도구/언어)
-- IntelliJ(Java, html, css, js, spring boot, spring)
-- pycharm(Python)
+#### `Back-end`
+- Java
+- Python
 - Oracle
 - github(형상관리)
+- Spring Boot 2.3
+- Gradle
+
+#### `Front-end`
+- html
+- css
+- js 
+
+## 📗핵심 기능
+1. 사용자들에게 맞는 카페 목록과 상세 정보를 제공
+2. 카페별로 리뷰를 편리하게 작성하고 공유할 수 있는 환경 제공
 
 ## 👩🏻‍💻담당역할
 1. 카페 리스트 페이지 구현
